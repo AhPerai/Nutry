@@ -12,7 +12,7 @@
         android:text="Login"
         app:layout_constraintBottom_toTopOf="@+id/labelEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -21,28 +21,29 @@
         android:id="@+id/labelEmail"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/label"
         android:hint="  ex: jorge@gmail.com"
         app:layout_constraintBottom_toTopOf="@+id/labelSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
         android:id="@+id/labelSenha"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/label"
         android:hint="  digite sua senha"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelEmail"
-        app:layout_constraintVertical_bias="0.623"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -53,34 +54,22 @@
         android:text="Senha"
         app:layout_constraintBottom_toTopOf="@+id/labelSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelEmail"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/conta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Não tem conta? Cadastre-se Agora!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
-
     <Button
         android:id="@+id/buttonEntrar"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
+        android:layout_width="298dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/botao"
         android:backgroundTint="@color/teal_700"
         android:text="ENTRAR"
-        app:layout_constraintBottom_toTopOf="@+id/conta"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelSenha" />
 

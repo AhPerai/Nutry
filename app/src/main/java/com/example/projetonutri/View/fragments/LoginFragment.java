@@ -1,4 +1,4 @@
-package com.example.projetonutri;
+package com.example.projetonutri.View.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

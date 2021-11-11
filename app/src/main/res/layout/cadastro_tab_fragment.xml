@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/buttonEntrar"
-        android:layout_width="350dp"
+        android:layout_width="338dp"
         android:layout_height="50dp"
         android:background="@drawable/botao"
         android:backgroundTint="@color/teal_700"
