@@ -6,8 +6,14 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
+import com.example.projetonutri.dao.Conexao;
+import com.example.projetonutri.dao.UsuarioDAO;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,4 +61,5 @@ public class MainActivity extends AppCompatActivity {
         }
     });
     }
+
 }
