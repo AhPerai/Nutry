@@ -2,36 +2,32 @@ package com.example.projetonutri.View.fragments;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class LoginAdapter extends FragmentPagerAdapter {
+public class LoginAdapter extends FragmentStateAdapter {
 
-    private Context context;
-    int totalTabs;
 
-    public LoginAdapter(FragmentManager fm, Context context, int totalTabs) {
-        super(fm);
-        this.context = context;
-        this.totalTabs = totalTabs;
+    public LoginAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
     }
 
-    public Fragment getItem(int position){
+    @NonNull
+    @Override
+    public Fragment createFragment(int position) {
         switch (position){
-            case 0:
-                LoginFragment loginFragment =  new LoginFragment();
-                return loginFragment;
             case 1:
-                CadastroFragment cadastroFragment = new CadastroFragment();
-                return cadastroFragment;
-            default:
-                return null;
+                return new cadastroFragment();
         }
+        return new loginFragment();
     }
 
     @Override
-    public int getCount() {
-        return totalTabs;
+    public int getItemCount() {
+        return 2;
     }
 }

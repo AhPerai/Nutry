@@ -8,7 +8,5 @@ public class Usuario {
     private String senha;
     private int idade;
     private String genero;
-
-
-
+    
 }

@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/cadastro_tab_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_cadastro.xml" value="0.4" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_login.xml" value="0.22552083333333334" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/login_tab_fragment.xml" value="0.25416666666666665" />
       </map>
     </option>
