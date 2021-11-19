@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoNutri">
         <activity
+            android:name=".View.fragments.Agenda"
+            android:exported="true" />
+        <activity
             android:name=".View.fragments.MainActivity"
             android:exported="true">
             <intent-filter>

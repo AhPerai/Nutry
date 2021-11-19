@@ -12,27 +12,26 @@ import java.sql.Statement;
 
 public class UsuarioDAO {
 
-        private static void createTable() {
-            Connection connection = Conexao.getConnection();
-            String createTable = "CREATE TABLE IF NOT EXISTS USUARIO"
-                    + "   (id serial PRIMARY KEY,"
-                    + "    nome  VARCHAR ( 255 )    NOT NULL,"
-                    + "    idade  DATE ( 20 ) NOT NULL,"
-                    + "    genero VARCHAR ( 45 ) NOT NULL, "
-                    + "    email  VARCHAR ( 255 )   NOT NULL,"
-                    + "    senha  VARCHAR ( 255 )   NOT NULL)";
-
-            Statement stmt = null;
-            try {
-                stmt = connection.createStatement();
-                stmt.execute(createTable);
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+//        private static void createTable() {
+//            Connection connection = Conexao.getConnection();
+//            String createTable = "CREATE TABLE IF NOT EXISTS USUARIO"
+//                    + "   (id serial PRIMARY KEY,"
+//                    + "    nome  VARCHAR ( 255 )    NOT NULL,"
+//                    + "    idade  VARCHAR ( 20 ) NOT NULL,"
+//                    + "    genero VARCHAR ( 45 ) NOT NULL, "
+//                    + "    email  VARCHAR ( 255 )   NOT NULL,"
+//                    + "    senha  VARCHAR ( 255 )   NOT NULL)";
+//
+//            Statement stmt = null;
+//            try {
+//                stmt = connection.createStatement();
+//                stmt.execute(createTable);
+//            } catch (SQLException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
 
         public static boolean adicionarUsuario(Usuario usuario){
-            createTable();
             Connection connection = Conexao.getConnection();
             String sql = "INSERT INTO USUARIO (nome, idade, genero, email, senha) VALUES(?, ?, ?, ?, ?)";
             PreparedStatement pstmt;

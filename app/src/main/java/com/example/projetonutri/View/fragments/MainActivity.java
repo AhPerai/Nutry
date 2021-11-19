@@ -2,18 +2,18 @@ package com.example.projetonutri.View.fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 import com.example.projetonutri.dao.Conexao;
-import com.example.projetonutri.dao.UsuarioDAO;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // INICIO SWITCH DOS FRAGMENTOS DE LOGIN E CADASTRO
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
@@ -54,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-        @Override
-        public void onPageSelected(int position) {
-            tabLayout.selectTab(tabLayout.getTabAt(position));
-        }
-    });
-    }
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
 
-}
+                // FIM SWITCH DOS FRAGMENTOS DE LOGIN E CADASTRO
+            }
+        });
+
+    }}

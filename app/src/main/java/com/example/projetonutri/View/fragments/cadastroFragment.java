@@ -1,28 +1,25 @@
 package com.example.projetonutri.View.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 import com.example.projetonutri.dao.Conexao;
 import com.example.projetonutri.dao.UsuarioDAO;
+import com.google.android.material.snackbar.Snackbar;
 
-import org.w3c.dom.Text;
+import java.util.Date;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link cadastroFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class cadastroFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -32,12 +29,7 @@ public class cadastroFragment extends Fragment {
 
     private static Conexao conexao = new Conexao();
     Button button;
-    EditText nome, email, idade, genero, senha;
-
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    EditText edit_nome, edit_email, edit_idade, edit_genero, edit_senha;
 
 
     public cadastroFragment() {
@@ -47,8 +39,6 @@ public class cadastroFragment extends Fragment {
     public static cadastroFragment newInstance(String param1, String param2) {
         cadastroFragment fragment = new cadastroFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -57,28 +47,45 @@ public class cadastroFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-            nome.findViewById(R.id.labelNome);
-            email.findViewById(R.id.labelEmail);
-            idade.findViewById(R.id.labelIdade);
-            genero.findViewById(R.id.labelGenero);
-            senha.findViewById(R.id.labelSenha);
         }
-    }
-
-    public void onCadastrar(View view){
-
-        Usuario usuario = new Usuario(nome.getText().toString(), email.getText().toString(),
-                senha.getText().toString(),idade.getText().toString(), genero.getText().toString());
-        UsuarioDAO.adicionarUsuario(usuario);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cadastro, container, false);
+        View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
+        button = (Button) view.findViewById(R.id.btnCadastrar);
+        edit_nome = (EditText) view.findViewById(R.id.labelNome);
+        edit_email = (EditText) view.findViewById(R.id.labelEmail);
+        edit_idade= (EditText) view.findViewById(R.id.labelIdade);
+        edit_genero= (EditText) view.findViewById(R.id.labelGenero);
+        edit_senha= (EditText) view.findViewById(R.id.labelSenha);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String nome = edit_nome.getText().toString();
+                String email = edit_email.getText().toString();
+                String idade = edit_idade.getText().toString();
+                String genero = edit_genero.getText().toString();
+                String senha = edit_senha.getText().toString();
+
+                if(nome.isEmpty() ||email.isEmpty() && senha.isEmpty() || idade.isEmpty() || genero.isEmpty()){
+                    Snackbar snackbar = Snackbar.make(view, "Preencha os campos vazios!", Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.RED);
+                    snackbar.setTextColor(Color.WHITE);
+                    snackbar.show();
+                }else{
+                    Usuario usuario = new Usuario(nome, email, senha, idade, genero);
+                    Snackbar snackbar = Snackbar.make(view, "Cadastro salvo com sucesso!", Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.CYAN);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+//                    UsuarioDAO usuarioDAO = new UsuarioDAO();
+//                    usuarioDAO.adicionarUsuario(usuario);
+                }
+            }
+        });
+        return view;
     }
 }

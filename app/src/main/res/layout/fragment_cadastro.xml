@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:onClick="onCadastrar">
+    android:layout_height="match_parent">
 
 
     <EditText
@@ -89,12 +88,11 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/buttonEntrar"
+        android:id="@+id/btnCadastrar"
         android:layout_width="298dp"
         android:layout_height="51dp"
         android:background="@drawable/botao"
         android:backgroundTint="@color/teal_700"
-        android:onClick="onCadastrar"
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +137,7 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/label"
         android:hint="  digite uma senha..."
-        app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent=".8" />

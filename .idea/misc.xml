@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_agenda.xml" value="0.2109375" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/cadastro_tab_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_cadastro.xml" value="0.4" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/content_agenda.xml" value="0.2109375" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_cadastro.xml" value="0.17252396166134185" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_login.xml" value="0.22552083333333334" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_login2.xml" value="0.21784420289855072" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/login_tab_fragment.xml" value="0.25416666666666665" />
       </map>
     </option>
