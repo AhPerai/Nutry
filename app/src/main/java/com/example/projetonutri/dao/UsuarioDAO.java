@@ -2,6 +2,7 @@ package com.example.projetonutri.dao;
 
 import com.example.projetonutri.Model.Usuario;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,6 +12,8 @@ import java.sql.Statement;
 
 
 public class UsuarioDAO {
+
+    private static Conexao con=new Conexao();
 
 //        private static void createTable() {
 //            Connection connection = Conexao.getConnection();
@@ -31,32 +34,14 @@ public class UsuarioDAO {
 //            }
 //        }
 
-        public static boolean adicionarUsuario(Usuario usuario){
-            Connection connection = Conexao.getConnection();
-            String sql = "INSERT INTO USUARIO (nome, idade, genero, email, senha) VALUES(?, ?, ?, ?, ?)";
-            PreparedStatement pstmt;
+    public void adicionarUsuario(Usuario usuario){
 
-            try {
-                pstmt = connection.prepareStatement(sql);
-                pstmt.setString(1, usuario.getNome());
-                pstmt.setString(2, usuario.getIdade());
-                pstmt.setString(3, usuario.getGenero());
-                pstmt.setString(4, usuario.getEmail());
-                pstmt.setString(5, usuario.getSenha());
+            String sql = String.format("INSERT INTO USUARIO (nome, idade, genero, email, senha) VALUES('%s', '%s', '%s', '%s', '%s');",
+                    usuario.getNome(), usuario.getIdade(), usuario.getGenero(), usuario.getEmail(), usuario.getSenha());
 
-                pstmt.execute();
-
-                final ResultSet resultado = pstmt.getGeneratedKeys();
-                if (resultado.next()) {
-                    int id = resultado.getInt(1);
-                    usuario.setId(id);
-                }
-                return true;
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-                return false;
-            }
+            new Conexao().executa(sql);
         }
+    }
 
 //        public static boolean removerCliente(int id){
 //            createTable();
@@ -125,6 +110,3 @@ public class UsuarioDAO {
 //                return false;
 //            }
 //        }
-    }
-
-

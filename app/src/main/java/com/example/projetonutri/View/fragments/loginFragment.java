@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,7 @@ public class loginFragment extends Fragment {
                 String StgSenha = senha.getText().toString();
 
                 if (StgEmail.equals("ana@gmail.com") && StgSenha.equals("123")) {
+
                     Snackbar snackbar = Snackbar.make(view, "ENTROU!", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
                     snackbar.setTextColor(Color.WHITE);

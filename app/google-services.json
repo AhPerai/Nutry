@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "940674140940",
+    "project_id": "nutry-eb152",
+    "storage_bucket": "nutry-eb152.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940674140940:android:8dd6d2c29b33e679341729",
+        "android_client_info": {
+          "package_name": "com.example.projetonutri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940674140940-jassds70aq49id059l7sbrttp8miudcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTSRQ8pkK3uNJ2ZBvDjvXURCP0s_esSrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940674140940-jassds70aq49id059l7sbrttp8miudcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

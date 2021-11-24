@@ -1,42 +1,73 @@
 package com.example.projetonutri.dao;
-        import java.sql.Connection;
-        import java.sql.DriverManager;
-        import java.sql.Driver;
-        import java.sql.SQLException;
 
-public class Conexao {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
-    private static Connection connection = null;
-    static final String DB_URL = "jdbc:postgresql://localhost:5432/nutry";
+public class Conexao implements Runnable {
 
-    static final String USER = "postgres";
-    static final String PASS = "postgres";
+    private Connection connection;
 
-    public static Connection conectar() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return connection;
+    private String host = "192.168.1.12";
+    private String database = "nutry";
+    private int port = 5432;
+    private String user = "postgres";
+    private String pass = "postgres";
+    private String url = "jdbc:postgresql://%s:%d/%s";
+    private boolean status;
+
+    public Conexao() {
+        this.url = String.format(this.url, this.host, this.port, this.database);
+        this.conectar();
+        this.descontectar();
     }
 
-    public static void descontecar() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
+    @Override
+    public void run() {
+        try{
+            Class.forName("org.postgresql.Driver");
+            String user = "postgres";
+            String pass = "postgres";
+            String url = "jdbc:postgresql://192.168.1.12:5432/nutry";
+            this.connection = DriverManager.getConnection(url, user, pass);
+        }catch (Exception e){
+            e.getMessage();
+        }
+    }
+
+    public void conectar(){
+        Thread thread = new Thread(this);
+        thread.start();
+        try{
+            thread.join();
+        }catch (Exception e){
+            e.getMessage();
+        }
+    }
+
+    public void descontectar(){
+        if(this.connection !=null){
+            try{
+                this.connection.close();
+            }catch (Exception e){
+
+            }finally {
+                this.connection = null;
             }
         }
     }
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            conectar();
+    public ResultSet executa(String sql){
+        this.conectar();
+        ResultSet resultSet = null;
+        try {
+            resultSet = new ExecutaConexao(this.connection, sql).execute().get();
+        }catch (Exception e){
+            e.getMessage();
         }
-        return connection;
+
+        return resultSet;
     }
+
 }
 

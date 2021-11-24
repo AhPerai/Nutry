@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,8 +14,11 @@ import android.widget.EditText;
 
 import com.example.projetonutri.R;
 import com.example.projetonutri.dao.Conexao;
+import com.example.projetonutri.dao.UsuarioDAO;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,11 +26,12 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 viewPager;
     LoginAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Conexao conexao = new Conexao();
 
         // INICIO SWITCH DOS FRAGMENTOS DE LOGIN E CADASTRO
 
@@ -66,4 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }}
+    }
+
+
+}
