@@ -8,12 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projetonutri.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -51,7 +51,6 @@ public class loginFragment extends Fragment {
         button = (Button) view.findViewById(R.id.btnEntrar);
         email = (EditText) view.findViewById(R.id.labelEmail);
         senha = (EditText) view.findViewById(R.id.labelSenha);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +63,8 @@ public class loginFragment extends Fragment {
                     snackbar.setBackgroundTint(Color.RED);
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
+                    Intent intent = new Intent(getActivity(), Home.class);
+                    startActivity(intent);
                 }else{
                     Snackbar snackbar = Snackbar.make(view, "Email ou senha incorretos!", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
@@ -80,4 +81,5 @@ public class loginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+
 }

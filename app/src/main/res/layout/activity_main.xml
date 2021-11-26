@@ -15,7 +15,7 @@
         android:layout_height="599dp"
         android:baselineAligned="false"
         android:scaleType="centerCrop"
-        android:src="@drawable/fundo_branco"
+        android:src="@drawable/fundo_esquerda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

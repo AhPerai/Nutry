@@ -39,7 +39,6 @@ public class UsuarioDAO {
             String sql = String.format("INSERT INTO USUARIO (nome, idade, genero, email, senha) VALUES('%s', '%s', '%s', '%s', '%s');",
                     usuario.getNome(), usuario.getIdade(), usuario.getGenero(), usuario.getEmail(), usuario.getSenha());
 
-            new Conexao().executa(sql);
         }
     }
 

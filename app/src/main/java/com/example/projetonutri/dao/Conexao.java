@@ -57,17 +57,5 @@ public class Conexao implements Runnable {
         }
     }
 
-    public ResultSet executa(String sql){
-        this.conectar();
-        ResultSet resultSet = null;
-        try {
-            resultSet = new ExecutaConexao(this.connection, sql).execute().get();
-        }catch (Exception e){
-            e.getMessage();
-        }
-
-        return resultSet;
-    }
-
 }
 

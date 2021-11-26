@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoNutri">
         <activity
-            android:name=".View.fragments.Agenda"
+            android:name=".View.fragments.Home"
             android:exported="true" />
         <activity
             android:name=".View.fragments.MainActivity"
