@@ -62,6 +62,8 @@ public class loginFragment extends Fragment {
                     snackbar.setBackgroundTint(Color.RED);
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
+                    Intent intent = new Intent(getActivity(), HomeActivicy.class);
+                    startActivity(intent);
                 }else{
                     Snackbar snackbar = Snackbar.make(view, "Email ou senha incorretos!", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
