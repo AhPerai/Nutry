@@ -9,22 +9,32 @@
     android:background="@drawable/textura"
     android:backgroundTint="#00CEA9">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fundo"
-        android:layout_width="373dp"
-        android:layout_height="645dp"
+    <ImageView
+        android:id="@+id/loginTela"
+        android:layout_width="401dp"
+        android:layout_height="689dp"
+        android:baselineAligned="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fundo_esquerda"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="392dp"
+        android:layout_height="668dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/loginTela"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497"
-        android:background="@drawable/fundo_esquerda">
+        app:layout_constraintVertical_bias="0.497">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"
-            android:layout_width="372dp"
-            android:layout_height="579dp"
+            android:layout_width="391dp"
+            android:layout_height="608dp"
             android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,14 +43,12 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            android:layout_width="352dp"
-            android:layout_height="33dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="297dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/view_pager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.761"
             app:layout_constraintStart_toStartOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -28,11 +28,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class cadastroFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
     Button button;
     EditText edit_nome, edit_email, edit_idade, edit_genero, edit_senha;
 

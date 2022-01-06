@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.example.projetonutri.R;
+import com.example.projetonutri.dao.Conexao;
 import com.google.android.material.tabs.TabLayout;
 
 public class Home extends AppCompatActivity {
@@ -20,11 +21,13 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agenda);
+        setContentView(R.layout.activity_main);
+        Conexao conexao = new Conexao();
+
+        // INICIO SWITCH DOS FRAGMENTOS DE LOGIN E CADASTRO
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
-        fundo = findViewById(R.id.fundo);
 
         FragmentManager fm = getSupportFragmentManager();
         adapter = new HomeAdapter(fm, getLifecycle());
@@ -32,7 +35,7 @@ public class Home extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("Agenda"));
         tabLayout.addTab(tabLayout.newTab().setText("Score"));
-        tabLayout.addTab(tabLayout.newTab().setText("Dicas"));
+        tabLayout.addTab(tabLayout.newTab().setText("Dica"));
         tabLayout.addTab(tabLayout.newTab().setText("Perfil"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -56,6 +59,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
+
             }
         });
 
