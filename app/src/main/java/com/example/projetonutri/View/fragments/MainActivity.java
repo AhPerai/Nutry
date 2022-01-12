@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.projetonutri.R;
-import com.example.projetonutri.dao.Conexao;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

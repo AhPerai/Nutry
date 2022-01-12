@@ -11,6 +11,9 @@ public class Usuario {
     private String idade;
     private String genero;
 
+    public Usuario(){
+    }
+
     public Usuario(String nome, String email, String senha, String idade, String genero) {
         this.nome = nome;
         this.email = email;

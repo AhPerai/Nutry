@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".View.fragments.HomeActivicy"
     android:background="@drawable/textura"
-    android:backgroundTint="#00CEA9">
+    android:backgroundTint="@color/fundo">
 
     <ImageView
         android:id="@+id/loginTela"

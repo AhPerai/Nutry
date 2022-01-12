@@ -14,30 +14,25 @@ import androidx.fragment.app.Fragment;
 
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
-import com.example.projetonutri.dao.Conexao;
-import com.example.projetonutri.dao.UsuarioDAO;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.Date;
-
-public class cadastroFragment extends Fragment {
+public class CadastroFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private static Conexao conexao = new Conexao();
     Button button;
     EditText edit_nome, edit_email, edit_idade, edit_genero, edit_senha;
 
 
-    public cadastroFragment() {
+    public CadastroFragment() {
         // Required empty public constructor
     }
 
-    public static cadastroFragment newInstance(String param1, String param2) {
-        cadastroFragment fragment = new cadastroFragment();
+    public static CadastroFragment newInstance(String param1, String param2) {
+        CadastroFragment fragment = new CadastroFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

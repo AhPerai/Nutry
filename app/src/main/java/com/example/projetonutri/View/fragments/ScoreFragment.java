@@ -10,35 +10,21 @@ import android.view.ViewGroup;
 
 import com.example.projetonutri.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link agendaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class agendaFragment extends Fragment {
+public class ScoreFragment extends Fragment {
 
-    public agendaFragment() {
+    public ScoreFragment() {
         // Required empty public constructor
-    }
-
-    public static agendaFragment newInstance(String param1, String param2) {
-        agendaFragment fragment = new agendaFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agenda, container, false);
+        return inflater.inflate(R.layout.fragment_score, container, false);
     }
 }

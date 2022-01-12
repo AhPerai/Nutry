@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/textura"
-    android:backgroundTint="#00CEA9">
+    android:backgroundTint="@color/fundo">
 
 
     <ImageView

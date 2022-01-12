@@ -18,13 +18,13 @@ public class HomeAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 1:
-                return new scoreFragment();
+                return new ScoreFragment();
             case 2:
-                return new dicaFragment();
+                return new DicaFragment();
             case 3:
-                return new perfilFragment();
+                return new PerfilFragment();
         }
-        return new agendaFragment();
+        return new AgendaFragment();
     }
 
     @Override

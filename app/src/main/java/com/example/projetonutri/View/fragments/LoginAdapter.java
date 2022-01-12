@@ -1,15 +1,10 @@
 package com.example.projetonutri.View.fragments;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
-import com.example.projetonutri.View.fragments.cadastroFragment;
-import com.example.projetonutri.View.fragments.loginFragment;
 
 /*
 
@@ -28,9 +23,9 @@ public class LoginAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 1:
-                return new cadastroFragment();
+                return new CadastroFragment();
         }
-        return new loginFragment();
+        return new LoginFragment();
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.example.projetonutri.View.fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,23 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.projetonutri.R;
-import com.google.android.material.snackbar.Snackbar;
 
 
-public class loginFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
     Button button;
     EditText email, senha;
 
-    public loginFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
 
-    public static loginFragment newInstance(String param1, String param2) {
-        loginFragment fragment = new loginFragment();
+    public static LoginFragment newInstance(String param1, String param2) {
+        LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -58,17 +57,11 @@ public class loginFragment extends Fragment {
                 String StgSenha = senha.getText().toString();
 
                 if (StgEmail.equals("ana@gmail.com") && StgSenha.equals("123")) {
-                    Snackbar snackbar = Snackbar.make(view, "ENTROU!", Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.WHITE);
-                    snackbar.show();
+                    Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), HomeActivicy.class);
                     startActivity(intent);
                 }else{
-                    Snackbar snackbar = Snackbar.make(view, "Email ou senha incorretos!", Snackbar.LENGTH_SHORT);
-                    snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.WHITE);
-                    snackbar.show();
+                    Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
                 }
 
             }
