@@ -6,6 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.projetonutri.DicasFragment;
+import com.example.projetonutri.PerfilFragment;
+import com.example.projetonutri.ScoreFragment;
+
 public class HomeAdapter extends FragmentStateAdapter {
 
 
@@ -20,7 +24,7 @@ public class HomeAdapter extends FragmentStateAdapter {
             case 1:
                 return new ScoreFragment();
             case 2:
-                return new DicaFragment();
+                return new DicasFragment();
             case 3:
                 return new PerfilFragment();
         }
