@@ -8,7 +8,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.example.projetonutri.R;
-import com.example.projetonutri.dao.Conexao;
 import com.google.android.material.tabs.TabLayout;
 
 public class Home extends AppCompatActivity {
