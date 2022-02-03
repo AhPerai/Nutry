@@ -7,7 +7,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.projetonutri.DicasFragment;
-import com.example.projetonutri.PerfilFragment;
 import com.example.projetonutri.ScoreFragment;
 
 public class HomeAdapter extends FragmentStateAdapter {

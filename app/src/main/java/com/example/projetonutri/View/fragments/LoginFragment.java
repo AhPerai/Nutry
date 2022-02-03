@@ -61,7 +61,7 @@ public class LoginFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), HomeActivicy.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
                 }
 
             }
