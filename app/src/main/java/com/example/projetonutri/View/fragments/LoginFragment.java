@@ -57,6 +57,7 @@ public class LoginFragment extends Fragment {
                 String StgSenha = senha.getText().toString();
 
                 if (StgEmail.equals("ana@gmail.com") && StgSenha.equals("123")) {
+                    //Toast e Intent
                     Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), HomeActivicy.class);
                     startActivity(intent);

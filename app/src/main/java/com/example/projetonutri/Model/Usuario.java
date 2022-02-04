@@ -5,13 +5,13 @@ import java.util.Date;
 public class Usuario {
 
     private int id;
-    private String nome;
     private String email;
     private String senha;
-    private String idade;
+    private String nome;
+    private int idade;
     private String genero;
 
-    public Usuario(String nome, String email, String senha, String idade, String genero) {
+    public Usuario(String email, String senha, String nome, int idade, String genero) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -51,11 +51,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
