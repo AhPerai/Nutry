@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projetonutri">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
     <application
         android:usesCleartextTraffic="true"
@@ -16,6 +13,10 @@
         android:theme="@style/Theme.ProjetoNutri">
         <activity
             android:name=".View.fragments.EditPerfilActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".Service.Notificacao"
             android:exported="false" />
 
         <activity

@@ -1,22 +1,35 @@
 package com.example.projetonutri.Model;
 
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario {
 
-    private int id;
+    private static int id;
+    private String nome;
     private String email;
     private String senha;
-    private String nome;
-    private int idade;
+    private String idade;
     private String genero;
+    private ArrayList<Refeicao> refeicoes = new ArrayList<>();
 
-    public Usuario(String email, String senha, String nome, int idade, String genero) {
+    public Usuario(){
+    }
+
+    public Usuario(String nome, String email, String senha, String idade, String genero) {
+        geraId();
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.idade = idade;
         this.genero = genero;
+    }
+
+    private void geraId() {
+        id++;
     }
 
     public int getId() {
@@ -51,11 +64,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
@@ -65,5 +78,19 @@ public class Usuario {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public ArrayList<Refeicao> getRefeicoes() {
+        return refeicoes;
+    }
+
+    public void setRefeicoes(ArrayList<Refeicao> refeicoes) {
+        this.refeicoes = refeicoes;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return super.toString() + id + "Nome:"+ nome + "Idade: "+ idade + "Genero: "+ genero + "Email:"+ email + "Senha: "+ senha;
     }
 }
