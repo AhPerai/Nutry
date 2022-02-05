@@ -47,4 +47,11 @@ public interface UsuarioService {
     @DELETE("usuario/{id}")
     Call<Usuario> deleteUsuarioById(@Path("id") String id);
 
+    @FormUrlEncoded
+    @POST("usuario/login")
+    Call<Usuario> verificarLogin(
+            @Field("email") String email,
+            @Field("senha") String senha
+    );
+
 }

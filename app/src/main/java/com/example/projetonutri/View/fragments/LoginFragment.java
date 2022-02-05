@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
+import com.example.projetonutri.Service.RetrofitService;
+import com.example.projetonutri.Service.UsuarioService;
+import com.example.projetonutri.Utils.UsuarioLogado;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class LoginFragment extends Fragment {
@@ -46,6 +55,8 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
+        UsuarioLogado usuarioLogado = UsuarioLogado.getInstance();
+        usuarioLogado.setUsuarioLogado(null);
         button = (Button) view.findViewById(R.id.btnEntrar);
         email = (EditText) view.findViewById(R.id.labelEmail);
         senha = (EditText) view.findViewById(R.id.labelSenha);
@@ -56,14 +67,32 @@ public class LoginFragment extends Fragment {
                 String StgEmail = email.getText().toString();
                 String StgSenha = senha.getText().toString();
 
-                if (StgEmail.equals("ana@gmail.com") && StgSenha.equals("123")) {
-                    //Toast e Intent
-                    Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), HomeActivicy.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(getContext(), "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
-                }
+                //Fazendo a chamada à API
+                UsuarioService usuarioService = new RetrofitService().getUsuarioService();
+                Call<Usuario> call = usuarioService.verificarLogin( StgEmail, StgSenha);
+
+                call.enqueue(new Callback<Usuario>() {
+
+                    @Override
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), HomeActivicy.class);
+                            startActivity(intent);
+                            usuarioLogado.setUsuarioLogado(response.body());
+                        }else{
+                            Toast.makeText(getContext(), "O usuário ou senha informados são inválidos", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+                        Log.e("UsuarioService   ", "Erro ao efetuar o cadastro:" + t.getMessage());
+                    }
+                });
+
+
 
             }
         });
