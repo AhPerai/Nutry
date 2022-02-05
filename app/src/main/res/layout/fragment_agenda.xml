@@ -8,78 +8,67 @@
 
 
     <TextView
-        android:id="@+id/tv_titulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_refeicao"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
         android:id="@+id/tv_subtitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:text="@string/frase_secundaria"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/button_refeicao"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:text="Adicionar nova refeição"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button_agua"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="408dp"
         android:text="Adicionar água"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_refeicao" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_refeicao"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="524dp"
+        android:text="Adicionar nova refeição"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/title_view"
         android:layout_width="370dp"
         android:layout_height="50dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginBottom="288dp"
         android:background="@drawable/data"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_agua" />
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_agenda"
+        android:layout_width="352dp"
+        android:layout_height="229dp"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="363dp"
-        android:layout_height="362dp"
-        android:layout_marginTop="73dp"
+        android:layout_width="366dp"
+        android:layout_height="255dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/fieldset2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_agua" />
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_agenda"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="400dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.495"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

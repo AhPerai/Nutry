@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.projetonutri.Model.ListaUsuario;
+import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 
 
@@ -55,16 +57,24 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 String StgEmail = email.getText().toString();
                 String StgSenha = senha.getText().toString();
-
-                if (StgEmail.equals("ana@gmail.com") && StgSenha.equals("123")) {
+                ListaUsuario listaUsuario = new ListaUsuario();
+                Usuario usuario = new Usuario();
+                int cont = 0;
+                for(int i = 0; i < listaUsuario.getUsuarios().size(); i++){
+                    if((listaUsuario.getUsuarios().get(i).getEmail().equals(StgEmail)) && (listaUsuario.getUsuarios().get(i).getSenha().equals(StgSenha))){
+                        cont = 1;
+                        usuario = listaUsuario.getUsuarios().get(i);
+                    }
+                }
+                if(cont == 1){
                     //Toast e Intent
-                    Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Login efetuado com sucesso", Toast.LENGTH_SHORT).show();
+                    listaUsuario.setUsuarioLogado(usuario);
                     Intent intent = new Intent(getActivity(), HomeActivicy.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(getContext(), "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
-                }
-
+                     Toast.makeText(getContext(), "Email ou senha incorretos", Toast.LENGTH_SHORT).show();
+                    }
             }
         });
         return view;

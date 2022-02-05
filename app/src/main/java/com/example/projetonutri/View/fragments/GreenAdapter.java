@@ -5,32 +5,29 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.R;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder>{
 
 
     private static final String TAG = GreenAdapter.class.getSimpleName();
 
-    final private ListItemClickListener mOnListItemClickListener;
+    List<Refeicao> comidas = new ArrayList<>();
+    TextView comidaDoDia;
 
-    private int mNumberItens;
-
-    private static  int viewHolderCount;
-
-    public GreenAdapter(int numeroItens, ListItemClickListener mOnListItemClickListener) {
-        this.mOnListItemClickListener = mOnListItemClickListener;
-        mNumberItens = numeroItens;
-        viewHolderCount = 0;
-    }
-
-
-    interface ListItemClickListener{
-        void onListItemClick(int param);
+    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
+        this.comidas = refeicaoArrayList;
     }
 
     @NonNull
@@ -44,7 +41,6 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         View view = inflater.inflate(layoutItem, parent, shouldAttachToParentImmediately);
         NumberViewHolder viewHolder = new NumberViewHolder(view);
 
-        viewHolderCount++;
         return viewHolder;
     }
 
@@ -55,22 +51,18 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     @Override
     public int getItemCount() {
-        return mNumberItens;
+        return comidas.size();
     }
 
-    public class NumberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class NumberViewHolder extends RecyclerView.ViewHolder {
 
         public NumberViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+
+            //cria as variaveis
+
         }
 
 
-
-        @Override
-        public void onClick(View v) {
-            int clickedPosition = getAdapterPosition();
-            mOnListItemClickListener.onListItemClick(clickedPosition);
-        }
     }
 }
