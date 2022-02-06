@@ -12,8 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projetonutri.Model.Refeicao;
-import com.example.projetonutri.Model.Vitamina;
 import com.example.projetonutri.R;
 import com.example.projetonutri.VitaminasActivity;
 
@@ -25,7 +23,9 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     private static final String TAG = GreenAdapter.class.getSimpleName();
 
+/*
     List<Refeicao> comidas = new ArrayList<>();
+*/
     TextView comidaDoDia;
 
 //    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
@@ -51,7 +51,9 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         Log.d(TAG, "#"+position);
 
         //o objeto de refeição abaixo serve pra pegar a refeição uma e uma e adicioinar as informações dessa refeição em uma linha da tabela
+/*
         Refeicao refeicao = comidas.get(position);
+*/
         int posicao = position;
         //TODO atribuir a refeição e  horário as variáveis da tela
         /*
@@ -71,7 +73,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     @Override
     public int getItemCount() {
         //O tamanho da lista de refeições que tem vinculadas ao usua
-        return comidas.size();
+        return 0;
     }
 
     public class NumberViewHolder extends RecyclerView.ViewHolder {

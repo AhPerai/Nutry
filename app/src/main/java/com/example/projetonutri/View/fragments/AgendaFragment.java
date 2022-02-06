@@ -5,32 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
 
 import com.example.projetonutri.DialogRefeicaoFragment;
-import com.example.projetonutri.Model.Alimento;
-import com.example.projetonutri.Model.CategoriaAlimento;
-import com.example.projetonutri.Model.ListaCategoriaAlimento;
-import com.example.projetonutri.Model.ListaUsuario;
-import com.example.projetonutri.Model.ListaVitamina;
-import com.example.projetonutri.Model.Vitamina;
 import com.example.projetonutri.R;
 import com.example.projetonutri.RecyclerViewActivity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,7 +31,6 @@ public class AgendaFragment extends Fragment {
     private static final int NUM_LIST_ITENS = 5;
 
     Button btnAgua, btnRefeicao, btnVerHistorico;
-    List<String> comidas = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

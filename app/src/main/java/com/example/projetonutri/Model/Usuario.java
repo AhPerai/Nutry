@@ -14,7 +14,6 @@ public class Usuario {
     private String nome;
     private int idade;
     private String genero;
-    private ArrayList<Refeicao> refeicoes = new ArrayList<>();
 
     public Usuario(String nome, String email, String senha, int idade, String genero) {
         this.nome = nome;
@@ -72,9 +71,6 @@ public class Usuario {
         this.genero = genero;
     }
 
-    public ArrayList<Refeicao> getRefeicoes() {
-        return refeicoes;
-    }
 
     @NonNull
     @Override

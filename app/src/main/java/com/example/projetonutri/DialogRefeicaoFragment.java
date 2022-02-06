@@ -11,24 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.projetonutri.Model.Alimento;
-import com.example.projetonutri.Model.CategoriaAlimento;
-import com.example.projetonutri.Model.ListaCategoriaAlimento;
-import com.example.projetonutri.Model.ListaUsuario;
-import com.example.projetonutri.Model.Refeicao;
-import com.example.projetonutri.Model.Usuario;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,11 +43,13 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         adicionarMaisRefeicao = view.findViewById(R.id.adiconarAlimento);
         salvarRefeicao = view.findViewById(R.id.salvarRefeicao);
         listaAlimentos = view.findViewById(R.id.listaAlimentos);
-        ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
+
 
         //TODO aqui você precisa popular o spinner com a lista de categorias
-        //Lista de categorias estática
         /*
+        ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
+        //Lista de categorias estática
+
         ArrayAdapter<CategoriaAlimento> spinnerArrayAdapter =
                 new ArrayAdapter<CategoriaAlimento>(getContext(), android.R.layout.simple_spinner_item, lista.getCategoriaAlimentos());
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -95,7 +83,9 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
             }
         });
 
+/*
         ListaUsuario usuarioLogado = new ListaUsuario();
+*/
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
