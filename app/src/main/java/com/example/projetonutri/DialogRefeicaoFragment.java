@@ -59,6 +59,9 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         listaAlimentos = view.findViewById(R.id.listaAlimentos);
         ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
 
+        //TODO aqui você precisa popular o spinner com a lista de categorias
+        //Lista de categorias estática
+        /*
         ArrayAdapter<CategoriaAlimento> spinnerArrayAdapter =
                 new ArrayAdapter<CategoriaAlimento>(getContext(), android.R.layout.simple_spinner_item, lista.getCategoriaAlimentos());
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -68,6 +71,8 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         categoriaRefeicao.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //TODO aqui você precisa popular o spinner com a lista de alimentos
+
                 //Object selecionado = categoriaRefeicao.getSelectedItem(); //Pega objeto da categoria
 
                 //Pega a categoria selecionada e faz uma chamada para a API buscando os  alimentos
@@ -94,6 +99,13 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO essa é a função do botão de adicionar um alimento a mais na refeição do usuario, logo toda vez
+                //TODO que esse botão for criado, ele tem de adicionar um alimento a mais na refeição do usuario
+
+
+                //TODO para que apareca na tela todos os alimentos adicionados, coloque o array da lista de alimentos presente em
+                //TODO refeição dentro do listaAlimentos atraves do setText
+                /*
                 usuarioLogado.getUsuarioLogado().setAlimentodaRefeicao((Alimento) alimento.getSelectedItem());
                 listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().toString());
                 Toast.makeText(getContext(), "Seu alimento foi salvo na lista de alimentos desta refeição", Toast.LENGTH_LONG).show();
@@ -103,6 +115,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         salvarRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO Aqui a refeição é efetivamente adicionada no array de refeições do usuário, então esse botão salva a refeição.
                 //Pega a refeicao criada, seta o time, adiciona-a para a lista de refeicoes do usuario
                 /*
                 Date currentTime = Calendar.getInstance().getTime();

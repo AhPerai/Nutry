@@ -50,12 +50,13 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     public void onBindViewHolder(@NonNull GreenAdapter.NumberViewHolder holder, int position) {
         Log.d(TAG, "#"+position);
 
+        //o objeto de refeição abaixo serve pra pegar a refeição uma e uma e adicioinar as informações dessa refeição em uma linha da tabela
         Refeicao refeicao = comidas.get(position);
         int posicao = position;
+        //TODO atribuir a refeição e  horário as variáveis da tela
+        /*
         holder.refeicao.setText(refeicao.getRefeicoes().toString());
-/*
-        holder.hora.setText(refeicao.getDataeHora().toString());
-*/
+        holder.hora.setText(refeicao.getDataeHora().toString());*/
         holder.verVitaminas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 
+import android.telecom.Call;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Response;
 import com.example.projetonutri.Model.ListaUsuario;
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
@@ -22,8 +24,9 @@ import com.example.projetonutri.Service.UsuarioService;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 
+import javax.security.auth.callback.Callback;
+
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CadastroFragment extends Fragment {
