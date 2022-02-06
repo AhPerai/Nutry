@@ -1,6 +1,7 @@
 package com.example.projetonutri.View.fragments;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,7 @@ import com.example.projetonutri.Model.ListaUsuario;
 import com.example.projetonutri.Model.ListaVitamina;
 import com.example.projetonutri.Model.Vitamina;
 import com.example.projetonutri.R;
+import com.example.projetonutri.RecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +46,7 @@ public class AgendaFragment extends Fragment {
 
     private static final int NUM_LIST_ITENS = 5;
 
-    private GreenAdapter mAdapter;
-    RecyclerView mNumberList;
-    Button btnAgua, btnRefeicao;
+    Button btnAgua, btnRefeicao, btnVerHistorico;
     List<String> comidas = new ArrayList<>();
 
     @Override
@@ -60,15 +60,16 @@ public class AgendaFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
-//        mNumberList = view.findViewById(R.id.rv_agenda);
-//        RecyclerView.LayoutManager LayoutManager = new LinearLayoutManager(getContext());
-//        mNumberList.setLayoutManager(LayoutManager);
-//        //Passa como parametro para o GreenAdapter a lista de refeicoes para o usuário
-//        mAdapter = new GreenAdapter(ListaUsuario.usuarioLogado.getRefeicoes());
-//        mNumberList.setAdapter(mAdapter);
-//        mNumberList.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
         btnAgua = view.findViewById(R.id.button_agua);
         btnRefeicao = view.findViewById(R.id.button_refeicao);
+        btnVerHistorico = view.findViewById(R.id.button_verListaRefeicao);
+        btnVerHistorico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), RecyclerViewActivity.class);
+                startActivity(intent);
+            }
+        });
         btnRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

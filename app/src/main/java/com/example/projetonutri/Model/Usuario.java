@@ -15,6 +15,7 @@ public class Usuario {
     private int idade;
     private String genero;
     private ArrayList<Refeicao> refeicoes = new ArrayList<>();
+    Refeicao refeicao = new Refeicao();
 
     public Usuario(String nome, String email, String senha, int idade, String genero) {
         this.nome = nome;
@@ -76,8 +77,21 @@ public class Usuario {
         return refeicoes;
     }
 
-    public void setRefeicoes(ArrayList<Refeicao> refeicoes) {
-        this.refeicoes = refeicoes;
+    public void populaRefeicao(){
+        Refeicao refeicaoAux = new Refeicao();
+        for(int i = 0; i < refeicao.getRefeicoes().size(); i++){
+            refeicaoAux.getRefeicoes().add(refeicao.getRefeicoes().get(i));
+        }
+        refeicoes.add(refeicaoAux);
+        refeicao = new Refeicao();
+    }
+
+    public void setAlimentodaRefeicao(Alimento alimento) {
+        refeicao.setRefeicoes(alimento);
+    }
+
+    public Refeicao getAlimentodaRefeicao() {
+        return refeicao;
     }
 
     @NonNull

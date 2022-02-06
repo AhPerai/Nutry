@@ -11,6 +11,9 @@ public class Vitamina {
 
     }
 
+    public Vitamina() {
+    }
+
     private void geraId() {
         id++;
     }
@@ -29,5 +32,12 @@ public class Vitamina {
 
     public void setNomeVitamina(String nomeVitamina) {
         this.nomeVitamina = nomeVitamina;
+    }
+
+    @Override
+    public String toString() {
+        return "Vitamina{" +
+                "nomeVitamina='" + nomeVitamina + '\'' +
+                '}';
     }
 }

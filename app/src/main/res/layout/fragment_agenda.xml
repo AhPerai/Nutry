@@ -21,7 +21,7 @@
         android:id="@+id/button_agua"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="408dp"
+        android:layout_marginBottom="456dp"
         android:text="Adicionar água"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,43 +32,23 @@
         android:id="@+id/button_refeicao"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="524dp"
+        android:layout_marginTop="132dp"
         android:text="Adicionar nova refeição"
         android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_verListaRefeicao"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="248dp"
+        android:text="Ver histórico de refeições"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/title_view"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="288dp"
-        android:background="@drawable/data"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_agenda"
-        android:layout_width="352dp"
-        android:layout_height="229dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="366dp"
-        android:layout_height="255dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/fieldset2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

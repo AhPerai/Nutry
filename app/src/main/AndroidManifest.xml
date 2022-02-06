@@ -14,6 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoNutri">
         <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VitaminasActivity"
+            android:exported="false"
+            android:label="@string/title_activity_vitaminas"
+            android:theme="@style/Theme.ProjetoNutri.NoActionBar" />
+        <activity
             android:name=".View.fragments.EditPerfilActivity"
             android:exported="false" />
 
