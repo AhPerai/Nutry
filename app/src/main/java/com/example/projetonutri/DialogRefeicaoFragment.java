@@ -53,17 +53,24 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         alimento = view.findViewById(R.id.spinner_alimento);
         adicionarMaisRefeicao = view.findViewById(R.id.adiconarAlimento);
         salvarRefeicao = view.findViewById(R.id.salvarRefeicao);
+        //Lista de categorias estática
+        /*
         ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
+
         ArrayAdapter<CategoriaAlimento> spinnerArrayAdapter =
                 new ArrayAdapter<CategoriaAlimento>(getContext(), android.R.layout.simple_spinner_item, lista.getCategoriaAlimentos());
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categoriaRefeicao.setAdapter(spinnerArrayAdapter);
-
+        */
 
         categoriaRefeicao.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Object selecionado = categoriaRefeicao.getSelectedItem(); //Pega objeto da categoria
+                //Object selecionado = categoriaRefeicao.getSelectedItem(); //Pega objeto da categoria
+
+                //Pega a categoria selecionada e faz uma chamada para a API buscando os  alimentos
+                //vinculado a esta categoria
+                /*
                 for( int i = 0; i < lista.getCategoriaAlimentos().size(); i++){
                     if (lista.getCategoriaAlimentos().get(i).equals(selecionado)) {
                         ArrayAdapter<Alimento> spinnerArrayAdapter =
@@ -72,6 +79,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
                         alimento.setAdapter(spinnerArrayAdapter);
                     }
                 }
+                */
             }
 
             @Override
@@ -84,18 +92,24 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Populando o Array de alimentos de refeicao
+                /*
                 refeicao.setRefeicoes((Alimento) alimento.getSelectedItem());
                 Toast.makeText(getContext(), "Seu alimento foi salvo na lista de alimentos desta refeição", Toast.LENGTH_LONG).show();
+                */
             }
         });
 
         salvarRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Pega a refeicao criada, seta o time, adiciona-a para a lista de refeicoes do usuario
+                /*
                 Date currentTime = Calendar.getInstance().getTime();
                 refeicao.setDataeHora(currentTime);
                 ListaUsuario.getUsuarioLogado().getRefeicoes().add(refeicao);
                 Toast.makeText(getContext(), "Refeição salva com sucesso!", Toast.LENGTH_LONG).show();
+                */
             }
         });
 

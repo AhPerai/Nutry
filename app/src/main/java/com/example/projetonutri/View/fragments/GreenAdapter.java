@@ -26,9 +26,9 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     List<Refeicao> comidas = new ArrayList<>();
     TextView comidaDoDia;
 
-    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
-        this.comidas = refeicaoArrayList;
-    }
+//    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
+//        this.comidas = refeicaoArrayList;
+//    }
 
     @NonNull
     @Override
@@ -51,6 +51,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     @Override
     public int getItemCount() {
+        //O tamanho da lista de refeições que tem vinculadas ao usua
         return comidas.size();
     }
 

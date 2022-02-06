@@ -60,12 +60,13 @@ public class AgendaFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
-        mNumberList = view.findViewById(R.id.rv_agenda);
-        RecyclerView.LayoutManager LayoutManager = new LinearLayoutManager(getContext());
-        mNumberList.setLayoutManager(LayoutManager);
-        mAdapter = new GreenAdapter(ListaUsuario.usuarioLogado.getRefeicoes());
-        mNumberList.setAdapter(mAdapter);
-        mNumberList.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+//        mNumberList = view.findViewById(R.id.rv_agenda);
+//        RecyclerView.LayoutManager LayoutManager = new LinearLayoutManager(getContext());
+//        mNumberList.setLayoutManager(LayoutManager);
+//        //Passa como parametro para o GreenAdapter a lista de refeicoes para o usuário
+//        mAdapter = new GreenAdapter(ListaUsuario.usuarioLogado.getRefeicoes());
+//        mNumberList.setAdapter(mAdapter);
+//        mNumberList.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
         btnAgua = view.findViewById(R.id.button_agua);
         btnRefeicao = view.findViewById(R.id.button_refeicao);
         btnRefeicao.setOnClickListener(new View.OnClickListener() {

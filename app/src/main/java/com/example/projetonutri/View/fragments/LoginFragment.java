@@ -81,7 +81,7 @@ public class LoginFragment extends Fragment {
                             startActivity(intent);
                             usuarioLogado.setUsuarioLogado(response.body());
                         }else{
-                            Toast.makeText(getContext(), "O usuário ou senha informados são inválidos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "O email ou senha informados são inválidos", Toast.LENGTH_SHORT).show();
                         }
 
                     }

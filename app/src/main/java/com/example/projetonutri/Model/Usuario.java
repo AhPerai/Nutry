@@ -8,28 +8,20 @@ import java.util.Date;
 
 public class Usuario {
 
-    private static int id;
-    private String nome;
+    private  int id;
     private String email;
     private String senha;
-    private String idade;
+    private String nome;
+    private int idade;
     private String genero;
     private ArrayList<Refeicao> refeicoes = new ArrayList<>();
 
-    public Usuario(){
-    }
-
-    public Usuario(String nome, String email, String senha, String idade, String genero) {
-        geraId();
+    public Usuario(String nome, String email, String senha, int idade, String genero) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.idade = idade;
         this.genero = genero;
-    }
-
-    private void geraId() {
-        id++;
     }
 
     public int getId() {
@@ -64,11 +56,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
