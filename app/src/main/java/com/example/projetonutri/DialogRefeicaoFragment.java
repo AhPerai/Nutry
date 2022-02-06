@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projetonutri.Model.Alimento;
@@ -27,6 +28,7 @@ import com.example.projetonutri.Model.Usuario;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,6 +38,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
 
     Spinner categoriaRefeicao, alimento;
     Button adicionarMaisRefeicao, salvarRefeicao;
+    TextView listaAlimentos;
 
     @NonNull
     @Override
@@ -53,6 +56,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         alimento = view.findViewById(R.id.spinner_alimento);
         adicionarMaisRefeicao = view.findViewById(R.id.adiconarAlimento);
         salvarRefeicao = view.findViewById(R.id.salvarRefeicao);
+        listaAlimentos = view.findViewById(R.id.listaAlimentos);
         ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
         ArrayAdapter<CategoriaAlimento> spinnerArrayAdapter =
                 new ArrayAdapter<CategoriaAlimento>(getContext(), android.R.layout.simple_spinner_item, lista.getCategoriaAlimentos());
@@ -80,21 +84,22 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
             }
         });
 
-        Refeicao refeicao = new Refeicao();
+        ListaUsuario usuarioLogado = new ListaUsuario();
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                refeicao.setRefeicoes((Alimento) alimento.getSelectedItem());
+                usuarioLogado.getUsuarioLogado().setAlimentodaRefeicao((Alimento) alimento.getSelectedItem());
+                listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().toString());
                 Toast.makeText(getContext(), "Seu alimento foi salvo na lista de alimentos desta refeição", Toast.LENGTH_LONG).show();
             }
         });
-
         salvarRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Date currentTime = Calendar.getInstance().getTime();
-                refeicao.setDataeHora(currentTime);
-                ListaUsuario.getUsuarioLogado().getRefeicoes().add(refeicao);
+                usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().setDataeHora(currentTime);
+                usuarioLogado.getUsuarioLogado().populaRefeicao();
+                listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getRefeicoes().toString());
                 Toast.makeText(getContext(), "Refeição salva com sucesso!", Toast.LENGTH_LONG).show();
             }
         });
