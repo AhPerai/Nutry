@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/labelNome"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/label"
         android:hint="  Digite seu nome..."
@@ -27,7 +27,7 @@
         android:text="Nome"
         app:layout_constraintBottom_toTopOf="@+id/labelNome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -39,12 +39,13 @@
         android:layout_marginTop="52dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/label"
-        android:hint="  ex: 13/12/00"
+        android:hint="  ex: 21"
         app:layout_constraintBottom_toTopOf="@+id/labelSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelEmail"
+        app:layout_constraintVertical_bias="0.496"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -61,16 +62,17 @@
 
     <EditText
         android:id="@+id/labelGenero"
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="40dp"
         android:layout_marginTop="52dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/label"
         app:layout_constraintBottom_toTopOf="@+id/labelSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelEmail"
+        app:layout_constraintVertical_bias="0.495"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -82,15 +84,15 @@
         android:text="Gênero"
         app:layout_constraintBottom_toTopOf="@+id/labelGenero"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelEmail"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnCadastrar"
-        android:layout_width="298dp"
-        android:layout_height="51dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:background="@drawable/botao_princ"
         android:text="CADASTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,17 +104,17 @@
 
     <EditText
         android:id="@+id/labelEmail"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:background="@drawable/label"
         android:hint="  ex: jose@gmail.com"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelNome"
-        app:layout_constraintVertical_bias="0.138"
+        app:layout_constraintVertical_bias="0.152"
         app:layout_constraintWidth_percent=".8" />
 
     <TextView
@@ -124,18 +126,19 @@
         android:text="Email"
         app:layout_constraintBottom_toTopOf="@+id/labelEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelNome"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/labelSenha"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/label"
         android:hint="  digite uma senha..."
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +151,7 @@
         android:text="Senha"
         app:layout_constraintBottom_toTopOf="@+id/labelSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />

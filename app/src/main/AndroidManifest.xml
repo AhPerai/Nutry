@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetoNutri">
         <activity
+            android:name=".RecyclerViewAgua"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerViewActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".View.fragments.EditPerfilActivity"
             android:exported="false" />
 
-        <service
+        <receiver
             android:name=".Service.Notificacao"
             android:exported="false" />
 

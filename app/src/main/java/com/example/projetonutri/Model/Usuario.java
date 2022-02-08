@@ -14,6 +14,9 @@ public class Usuario {
     private String nome;
     private int idade;
     private String genero;
+    private ArrayList<Refeicao> refeicoes = new ArrayList<>();
+    Refeicao refeicao = new Refeicao();
+    private ArrayList<Agua> aguas = new ArrayList<Agua>();
 
     public Usuario(String nome, String email, String senha, int idade, String genero) {
         this.nome = nome;
@@ -55,11 +58,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 
@@ -71,6 +74,35 @@ public class Usuario {
         this.genero = genero;
     }
 
+    public ArrayList<Refeicao> getRefeicoes() {
+        return refeicoes;
+    }
+
+    public void populaRefeicao(Date data){
+        Refeicao refeicaoAux = new Refeicao();
+        for(int i = 0; i < refeicao.getRefeicoes().size(); i++){
+            refeicaoAux.getRefeicoes().add(refeicao.getRefeicoes().get(i));
+        }
+        refeicaoAux.setDataeHora(data);
+        refeicoes.add(refeicaoAux);
+        refeicao = new Refeicao();
+    }
+
+    public void setAlimentodaRefeicao(Alimento alimento) {
+        refeicao.setRefeicoes(alimento);
+    }
+
+    public Refeicao getAlimentodaRefeicao() {
+        return refeicao;
+    }
+
+    public void setAgua(Agua agua) {
+        aguas.add(agua);
+    }
+
+    public ArrayList<Agua> getAguas() {
+        return aguas;
+    }
 
     @NonNull
     @Override

@@ -22,8 +22,6 @@ public class HomeAdapter extends FragmentStateAdapter {
             case 1:
                 return new ScoreFragment();
             case 2:
-                return new DicasFragment();
-            case 3:
                 return new PerfilFragment();
         }
         return new AgendaFragment();
@@ -31,7 +29,7 @@ public class HomeAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }
 

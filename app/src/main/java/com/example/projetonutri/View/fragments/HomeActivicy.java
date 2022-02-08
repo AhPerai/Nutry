@@ -28,8 +28,7 @@ public class HomeActivicy extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         tabLayout.addTab(tabLayout.newTab().setText("Agenda"));
-        tabLayout.addTab(tabLayout.newTab().setText("Score"));
-        tabLayout.addTab(tabLayout.newTab().setText("Dicas"));
+        tabLayout.addTab(tabLayout.newTab().setText("Lembrete"));
         tabLayout.addTab(tabLayout.newTab().setText("Perfil"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

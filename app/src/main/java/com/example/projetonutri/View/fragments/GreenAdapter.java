@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projetonutri.Model.Refeicao;
+import com.example.projetonutri.Model.Vitamina;
 import com.example.projetonutri.R;
 import com.example.projetonutri.VitaminasActivity;
 
@@ -28,9 +30,9 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 */
     TextView comidaDoDia;
 
-//    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
-//        this.comidas = refeicaoArrayList;
-//    }
+    public GreenAdapter(ArrayList<Refeicao> refeicaoArrayList){
+        this.comidas = refeicaoArrayList;
+    }
 
     @NonNull
     @Override
@@ -58,7 +60,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         //TODO atribuir a refeição e  horário as variáveis da tela
         /*
         holder.refeicao.setText(refeicao.getRefeicoes().toString());
-        holder.hora.setText(refeicao.getDataeHora().toString());*/
+        holder.hora.setText(refeicao.getDataeHora().toString());
         holder.verVitaminas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
