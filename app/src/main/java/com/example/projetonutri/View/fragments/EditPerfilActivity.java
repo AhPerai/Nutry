@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projetonutri.Model.ListaUsuario;
@@ -16,6 +17,7 @@ public class EditPerfilActivity extends AppCompatActivity {
 
     EditText etNome, etEmail, etSenha, etConfirmaSenha;
     Button btnAtualizar;
+    TextView nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

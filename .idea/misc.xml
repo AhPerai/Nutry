@@ -27,6 +27,7 @@
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_home_activicy.xml" value="0.15625" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_recycler_view.xml" value="0.264" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_recycler_view_agua.xml" value="0.1515625" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_saiba_mais.xml" value="0.14895833333333333" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/activity_vitaminas.xml" value="0.21666666666666667" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/cadastro_tab_fragment.xml" value="0.25416666666666665" />
@@ -37,6 +38,7 @@
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_agenda.xml" value="0.2" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_agenda2.xml" value="0.14583333333333334" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_cadastro.xml" value="0.264" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_dialog_agua.xml" value="0.14895833333333333" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_dialog_refeicao.xml" value="0.4" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_dica.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_login.xml" value="0.22552083333333334" />
@@ -45,6 +47,7 @@
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_perfil2.xml" value="0.13489583333333333" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_score.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/fragment_score2.xml" value="0.14895833333333333" />
+        <entry key="..\:/nutry/Nutry/app/src/main/res/layout/list_agua.xml" value="0.4" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/list_refeicoes.xml" value="0.536" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/layout/login_tab_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/nutry/Nutry/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.16510416666666666" />

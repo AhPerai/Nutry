@@ -97,8 +97,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 Date currentTime = Calendar.getInstance().getTime();
-                usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().setDataeHora(currentTime);
-                usuarioLogado.getUsuarioLogado().populaRefeicao();
+                usuarioLogado.getUsuarioLogado().populaRefeicao(currentTime);
                 listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getRefeicoes().toString());
                 Toast.makeText(getContext(), "Refeição salva com sucesso!", Toast.LENGTH_LONG).show();
             }

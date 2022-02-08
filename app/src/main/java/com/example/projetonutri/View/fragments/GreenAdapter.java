@@ -53,9 +53,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         Refeicao refeicao = comidas.get(position);
         int posicao = position;
         holder.refeicao.setText(refeicao.getRefeicoes().toString());
-/*
         holder.hora.setText(refeicao.getDataeHora().toString());
-*/
         holder.verVitaminas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

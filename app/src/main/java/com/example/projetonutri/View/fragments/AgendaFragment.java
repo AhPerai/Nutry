@@ -18,7 +18,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.example.projetonutri.DialogAguaFragment;
 import com.example.projetonutri.DialogRefeicaoFragment;
 import com.example.projetonutri.Model.Alimento;
 import com.example.projetonutri.Model.CategoriaAlimento;
@@ -28,6 +30,7 @@ import com.example.projetonutri.Model.ListaVitamina;
 import com.example.projetonutri.Model.Vitamina;
 import com.example.projetonutri.R;
 import com.example.projetonutri.RecyclerViewActivity;
+import com.example.projetonutri.RecyclerViewAgua;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +49,8 @@ public class AgendaFragment extends Fragment {
 
     private static final int NUM_LIST_ITENS = 5;
 
-    Button btnAgua, btnRefeicao, btnVerHistorico;
+    TextView textoInicio;
+    Button btnAgua, btnRefeicao, btnVerHistoricoRefeicao, btnVerConsumo;
     List<String> comidas = new ArrayList<>();
 
     @Override
@@ -62,8 +66,19 @@ public class AgendaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
         btnAgua = view.findViewById(R.id.button_agua);
         btnRefeicao = view.findViewById(R.id.button_refeicao);
-        btnVerHistorico = view.findViewById(R.id.button_verListaRefeicao);
-        btnVerHistorico.setOnClickListener(new View.OnClickListener() {
+        btnVerHistoricoRefeicao = view.findViewById(R.id.button_verListaRefeicao);
+        btnVerConsumo = view.findViewById(R.id.button_verListaAgua);
+        textoInicio = view.findViewById(R.id.tv_titulo);
+        ListaUsuario usuario = new ListaUsuario();
+        textoInicio.setText("Olá, "+ usuario.getUsuarioLogado().getNome()+ "!");
+        btnVerConsumo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), RecyclerViewAgua.class);
+                startActivity(intent);
+            }
+        });
+        btnVerHistoricoRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), RecyclerViewActivity.class);
@@ -87,13 +102,8 @@ public class AgendaFragment extends Fragment {
     }
 
     public void showCustomDialog(){
-        final Dialog dialog = new Dialog(getContext());
-
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(true);
-        dialog.setContentView(R.layout.dialog_agua);
-
-        dialog.show();
+        DialogAguaFragment dialogaguaFragment = new DialogAguaFragment();
+        dialogaguaFragment.show(getActivity().getSupportFragmentManager(),"dialog de agua");
     }
 
     public void showCustomDialogRefeicao(){

@@ -36,8 +36,6 @@ public class Vitamina {
 
     @Override
     public String toString() {
-        return "Vitamina{" +
-                "nomeVitamina='" + nomeVitamina + '\'' +
-                '}';
+        return "Vitamina " + nomeVitamina + '\'';
     }
 }
