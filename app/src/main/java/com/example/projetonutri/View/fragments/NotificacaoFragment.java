@@ -1,10 +1,8 @@
 package com.example.projetonutri.View.fragments;
 
 import static androidx.core.content.ContextCompat.getSystemService;
-import static androidx.core.content.ContextCompat.startForegroundService;
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,8 +11,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -25,24 +21,23 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.projetonutri.R;
-import com.example.projetonutri.Service.Notificacao;
 import com.example.projetonutri.Service.NotificacaoAgua;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ScoreFragment#newInstance} factory method to
+ * Use the {@link NotificacaoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScoreFragment extends Fragment {
+public class NotificacaoFragment extends Fragment {
 
     Switch lembreteRefeicao, lembreteAgua;
 
-    public ScoreFragment() {
+    public NotificacaoFragment() {
         // Required empty public constructor
     }
     
-    public static ScoreFragment newInstance(String param1, String param2) {
-        ScoreFragment fragment = new ScoreFragment();
+    public static NotificacaoFragment newInstance(String param1, String param2) {
+        NotificacaoFragment fragment = new NotificacaoFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

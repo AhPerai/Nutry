@@ -5,11 +5,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.projetonutri.View.fragments.GreenAdapter;
+import com.example.projetonutri.View.fragments.RefeicaoAdapter;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
-    private GreenAdapter mAdapter;
+    private RefeicaoAdapter mAdapter;
     RecyclerView mNumberList;
 
     @Override
@@ -17,6 +17,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
         mNumberList = findViewById(R.id.rv_agenda);
+        //Nesse trecho abaixo será passado o Array de Refeicoes para povoar o RecyclerView
+
 /*        RecyclerView.LayoutManager LayoutManager = new LinearLayoutManager(this);
         mNumberList.setLayoutManager(LayoutManager);
         mAdapter = new GreenAdapter(ListaUsuario.usuarioLogado.getRefeicoes());

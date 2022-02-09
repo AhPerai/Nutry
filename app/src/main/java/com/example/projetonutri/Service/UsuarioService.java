@@ -1,7 +1,9 @@
 package com.example.projetonutri.Service;
 
+import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.Model.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +30,7 @@ public interface UsuarioService {
 
 
     @GET("usuario/{id}")
-    Call<Usuario> getUsuarioById(@Path("id") String id);
+    Call<Usuario> getUsuarioById(@Path("id") int id);
 
     @GET("usuario")
     Call<List<Usuario>> getUsuarios();
@@ -45,7 +47,7 @@ public interface UsuarioService {
     );
 
     @DELETE("usuario/{id}")
-    Call<Usuario> deleteUsuarioById(@Path("id") String id);
+    Call<Usuario> deleteUsuarioById(@Path("id") int id);
 
     @FormUrlEncoded
     @POST("usuario/login")
@@ -53,5 +55,8 @@ public interface UsuarioService {
             @Field("email") String email,
             @Field("senha") String senha
     );
+
+    @GET("usuario/refeicao/{id}")
+    Call<List<Refeicao>> getRefeicaofromUsuario(@Path("id") int id);
 
 }

@@ -1,37 +1,33 @@
 package com.example.projetonutri.View.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.projetonutri.Model.Agua;
-import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.R;
-import com.example.projetonutri.VitaminasActivity;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.NumberViewHolder>{
 
-
-    private static final String TAG = GreenAdapter.class.getSimpleName();
+    private static final String TAG = RefeicaoAdapter.class.getSimpleName();
 
     List<Agua> aguas = new ArrayList<>();
-    TextView agua;
 
     public AguaAdapter(ArrayList<Agua> aguaArrayList){
         this.aguas = aguaArrayList;
     }
 
+    //Carrega a lista de águas
     @NonNull
     @Override
     public AguaAdapter.NumberViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,21 +42,23 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.NumberViewHold
         return viewHolder;
     }
 
+    //Popular as linhas da tabela de água
     @Override
     public void onBindViewHolder(@NonNull AguaAdapter.NumberViewHolder holder, int position) {
         Log.d(TAG, "#"+position);
-
         Agua agua = aguas.get(position);
-        int posicao = position;
+
         holder.tvAgua.setText(String.valueOf(agua.getQuantidadeDeCopos()));
         holder.hora.setText(agua.getDataEHora().toString());
     }
 
+    //Tamanho da lista
     @Override
     public int getItemCount() {
         return aguas.size();
     }
 
+    //Atualiza a lista de consumo de água caso novos consumos sejam adicionados
     public class NumberViewHolder extends RecyclerView.ViewHolder {
         TextView tvAgua, hora;
         public NumberViewHolder(@NonNull View itemView) {
@@ -69,7 +67,5 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.NumberViewHold
             hora = itemView.findViewById(R.id.horaAgua);
 
         }
-
-
     }
 }

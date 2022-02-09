@@ -3,8 +3,6 @@ package com.example.projetonutri.View.fragments;
 import android.graphics.Color;
 import android.os.Bundle;
 
-
-import android.telecom.Call;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +12,16 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.Response;
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 import com.example.projetonutri.Service.RetrofitService;
 import com.example.projetonutri.Service.UsuarioService;
 import com.google.android.material.snackbar.Snackbar;
 
-import javax.security.auth.callback.Callback;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class CadastroFragment extends Fragment {
 
@@ -46,6 +46,7 @@ public class CadastroFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
 
+        //Variaveis da tela
         button = (Button) view.findViewById(R.id.btnCadastrar);
         edit_nome = (EditText) view.findViewById(R.id.labelNome);
         edit_email = (EditText) view.findViewById(R.id.labelEmail);
@@ -63,6 +64,7 @@ public class CadastroFragment extends Fragment {
                 String genero = edit_genero.getText().toString();
                 String senha = edit_senha.getText().toString();
 
+                //Validações
                 if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || idade.isEmpty() || genero.isEmpty()) {
                     Snackbar snackbar = Snackbar.make(view, "Por favor, preencha os campos vazios", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
@@ -95,6 +97,8 @@ public class CadastroFragment extends Fragment {
                             Log.e("UsuarioService   ", "Erro ao efetuar o cadastro:" + t.getMessage());
                         }
                     });
+
+                    //Fim da chamada à API
                 }
             }
         });

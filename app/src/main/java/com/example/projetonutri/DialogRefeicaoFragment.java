@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
+
 /**
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
@@ -43,13 +45,11 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
         adicionarMaisRefeicao = view.findViewById(R.id.adiconarAlimento);
         salvarRefeicao = view.findViewById(R.id.salvarRefeicao);
         listaAlimentos = view.findViewById(R.id.listaAlimentos);
-
+//        ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
 
         //TODO aqui você precisa popular o spinner com a lista de categorias
-        /*
-        ListaCategoriaAlimento lista = new ListaCategoriaAlimento();
         //Lista de categorias estática
-
+        /*
         ArrayAdapter<CategoriaAlimento> spinnerArrayAdapter =
                 new ArrayAdapter<CategoriaAlimento>(getContext(), android.R.layout.simple_spinner_item, lista.getCategoriaAlimentos());
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -83,9 +83,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
             }
         });
 
-/*
-        ListaUsuario usuarioLogado = new ListaUsuario();
-*/
+//        ListaUsuario usuarioLogado = new ListaUsuario();
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +107,8 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
                 //Pega a refeicao criada, seta o time, adiciona-a para a lista de refeicoes do usuario
                 /*
                 Date currentTime = Calendar.getInstance().getTime();
-                usuarioLogado.getUsuarioLogado().populaRefeicao(currentTime);
+                usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().setDataeHora(currentTime);
+                usuarioLogado.getUsuarioLogado().populaRefeicao();
                 listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getRefeicoes().toString());
                 Toast.makeText(getContext(), "Refeição salva com sucesso!", Toast.LENGTH_LONG).show();
                 */
