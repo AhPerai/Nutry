@@ -17,6 +17,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,23 +81,15 @@ public class ScoreFragment extends Fragment {
         lembreteAgua.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
                 if (lembreteAgua.isChecked()) {
-                    //                   startForegroundService(getContext(), new Intent(getContext(), Notificacao.class));
                     lembreteAgua.setText("Habilitado");
-                    Toast.makeText(getContext(), "Você habilitou os lembretes de água", Toast.LENGTH_SHORT).show();
-
-                    long horaDoBotao = System.currentTimeMillis();
-
-                    long tempoAgua = 1000 * 6;
-                    AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
-                    Intent intent = new Intent(getContext(), NotificacaoAgua.class);
+                    Intent intent = new Intent("EXECUTAR_ALARME");
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
-                    alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
-                    alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, horaDoBotao + tempoAgua, pendingIntent);
-
+                    AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
+                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.currentThreadTimeMillis(),60, pendingIntent);
                 } else {
                     lembreteAgua.setText("Desabilitado");
-                    Toast.makeText(getContext(), "Você desabilitou os lembretes de água", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -108,7 +101,6 @@ public class ScoreFragment extends Fragment {
 
                 } else {
                     lembreteRefeicao.setText("Desabilitado");
-                    Toast.makeText(getContext(), "Você desabilitou os lembretes de refeição", Toast.LENGTH_SHORT).show();
                     }
                 }
 

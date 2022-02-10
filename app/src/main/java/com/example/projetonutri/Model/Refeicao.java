@@ -29,6 +29,6 @@ public class Refeicao {
 
     @Override
     public String toString() {
-        return "Alimentos=" + refeicoes;
+        return refeicoes + "";
     }
 }

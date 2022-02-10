@@ -21,7 +21,7 @@ import com.example.projetonutri.R;
  */
 public class PerfilFragment extends Fragment {
 
-    Button btnLoggout, btnEditarPerfil, btnSaibaMais;
+    Button btnLoggout, btnEditarPerfil, btnSaibaMais, btnVitaminas;
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -47,10 +47,19 @@ public class PerfilFragment extends Fragment {
         btnLoggout = view.findViewById(R.id.logout);
         btnEditarPerfil = view.findViewById(R.id.btn_edit_perfil);
         btnSaibaMais = view.findViewById(R.id.btn_saiba_mais);
-        btnSaibaMais.setOnClickListener(new View.OnClickListener() {
+        btnVitaminas = view.findViewById(R.id.btn_saiba_mais2);
+        btnVitaminas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String url = "https://www.holmesplace.com/pt/pt/blog/wellness/as-vitaminas-essenciais";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+        btnSaibaMais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.unimedfortaleza.com.br/blog/alimentacao/piramide-alimentar";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
             }
