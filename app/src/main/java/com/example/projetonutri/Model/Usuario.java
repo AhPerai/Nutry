@@ -13,15 +13,6 @@ public class Usuario {
     private ArrayList<Refeicao> listaRefeicao ;
 //    private ArrayList<Agua> listaAgua;
 
-
-    public Usuario(String nome, String email, String senha,
-                   int idade, String genero) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.idade = idade;
-        this.genero = genero;
-    }
     public Usuario(String nome, String email, String senha,
                    int idade, String genero, ArrayList<Refeicao> listaRefeicao) {
         this.nome = nome;

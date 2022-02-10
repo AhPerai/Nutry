@@ -6,9 +6,10 @@ public class Categoria {
 
     int id_categoria;
     private String nome;
-    private ArrayList<Alimento> alimentos;
 
-    public Categoria() {
+    public Categoria(int id_categoria, String nome) {
+        this.id_categoria = id_categoria;
+        this.nome = nome;
     }
 
     public int getId() {
@@ -27,13 +28,6 @@ public class Categoria {
         this.nome = nome;
     }
 
-    public ArrayList<Alimento> getAlimentos() {
-        return alimentos;
-    }
-
-    public void setAlimentos(ArrayList<Alimento> alimentos) {
-        this.alimentos = alimentos;
-    }
 
     @Override
     public String toString() {

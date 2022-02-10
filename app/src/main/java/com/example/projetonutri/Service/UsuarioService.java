@@ -59,4 +59,7 @@ public interface UsuarioService {
     @GET("usuario/refeicao/{id}")
     Call<List<Refeicao>> getRefeicaofromUsuario(@Path("id") int id);
 
+    @GET("usuario/refeicao/hoje/{id}")
+    Call<List<Refeicao>> getRefeicaofromUsuarioToday(@Path("id") int id);
+
 }

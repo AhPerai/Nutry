@@ -12,11 +12,14 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 import com.example.projetonutri.Service.RetrofitService;
 import com.example.projetonutri.Service.UsuarioService;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,7 +76,8 @@ public class CadastroFragment extends Fragment {
                 } else {
                     //Criando o usuário
                     int idadeInt = Integer.parseInt(idade);
-                    Usuario usuario = new Usuario( email, senha, nome, idadeInt, genero);
+                    ArrayList<Refeicao> list = new ArrayList<Refeicao>();
+                    Usuario usuario = new Usuario( email, senha, nome, idadeInt, genero, list);
 
                     //Fazendo a chamada à API
                     UsuarioService usuarioService = new RetrofitService().getUsuarioService();
