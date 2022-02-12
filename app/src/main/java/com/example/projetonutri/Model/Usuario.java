@@ -1,20 +1,24 @@
 package com.example.projetonutri.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
-
+    @SerializedName("id_usuario")
     private  int id;
     private String email;
     private String senha;
     private String nome;
     private int idade;
     private String genero;
-    private ArrayList<Refeicao> listaRefeicao ;
-//    private ArrayList<Agua> listaAgua;
+    @SerializedName("refeicaos")
+    private List<Refeicao> listaRefeicao;
+    //    private ArrayList<Agua> listaAgua;
 
     public Usuario(String nome, String email, String senha,
-                   int idade, String genero, ArrayList<Refeicao> listaRefeicao) {
+                   int idade, String genero, List<Refeicao> listaRefeicao) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -72,10 +76,22 @@ public class Usuario {
     }
 
     public ArrayList<Refeicao> getListaRefeicao() {
-        return listaRefeicao;
+        return (ArrayList<Refeicao>) listaRefeicao;
     }
 
-    public void setListaRefeicao(ArrayList<Refeicao> listaRefeicao) {
+    public void setListaRefeicao(List<Refeicao> listaRefeicao) {
         this.listaRefeicao = listaRefeicao;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", genero='" + genero + '\'' +
+                '}';
     }
 }

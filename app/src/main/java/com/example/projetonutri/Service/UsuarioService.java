@@ -56,6 +56,9 @@ public interface UsuarioService {
             @Field("senha") String senha
     );
 
+    @GET("usuario/email/{email}")
+    Call<Usuario> getUsuarioByEmail(@Path("email") String email);
+
     @GET("usuario/refeicao/{id}")
     Call<List<Refeicao>> getRefeicaofromUsuario(@Path("id") int id);
 

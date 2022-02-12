@@ -1,12 +1,16 @@
 package com.example.projetonutri.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Refeicao {
-
+    @SerializedName("id_refeicao")
     private  int id;
+    @SerializedName("data")
     private Date data;
+    @SerializedName("UsuarioIdUsuario")
     private int usuarioID;
     private ArrayList<Alimento> listaAlimento;
 

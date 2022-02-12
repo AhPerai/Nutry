@@ -1,11 +1,14 @@
 package com.example.projetonutri.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Alimento {
 
     private int id_alimento;
     private String nome;
+    @SerializedName("CategoriumIdCategoria")
     private int categoriaID;
     private ArrayList<Vitamina> listaVitamina;
 
@@ -37,5 +40,10 @@ public class Alimento {
 
     public void setCategoria(int categoria) {
         this.categoriaID = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 }
