@@ -52,6 +52,7 @@ public class ScoreFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        createNotificationChannel();
     }
 
 
@@ -84,10 +85,12 @@ public class ScoreFragment extends Fragment {
 
                 if (lembreteAgua.isChecked()) {
                     lembreteAgua.setText("Habilitado");
-                    Intent intent = new Intent("EXECUTAR_ALARME");
+                    Intent intent = new Intent(getContext(), NotificacaoAgua.class);
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
                     AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
-                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, SystemClock.currentThreadTimeMillis(),60, pendingIntent);
+
+                    long tenSec = 1000 * 10;
+                    alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.currentThreadTimeMillis() + tenSec, pendingIntent);
                 } else {
                     lembreteAgua.setText("Desabilitado");
                 }
@@ -96,11 +99,18 @@ public class ScoreFragment extends Fragment {
         lembreteRefeicao.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Intent intent = new Intent(getContext(), Notificacao.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
+                AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
 
                 if (lembreteRefeicao.isChecked()) {
+                    lembreteRefeicao.setText("Habilitado");
+                    long tenSec = 1000 * 10;
+                    alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.currentThreadTimeMillis(), tenSec, pendingIntent);
 
                 } else {
                     lembreteRefeicao.setText("Desabilitado");
+                    alarmManager.cancel(pendingIntent);
                     }
                 }
 

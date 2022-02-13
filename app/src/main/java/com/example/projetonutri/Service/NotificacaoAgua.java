@@ -21,12 +21,12 @@ public class NotificacaoAgua extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyLemubit")
                 .setSmallIcon(R.drawable.icone)
-                .setContentTitle("Lembrete de água!")
-                .setContentText("Hora da hidratação!")
-                .setAutoCancel(true)
+                .setContentTitle("Lembrete de consumo de água!")
+                .setContentText("Já fazem 30 minutos desde seu ultimo registro de consumo!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.notify(100, builder.build());
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
+
+        notificationManagerCompat.notify(200, builder.build());
     }
 }

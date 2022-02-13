@@ -91,6 +91,7 @@
         android:layout_marginBottom="308dp"
         android:background="@drawable/label"
         android:hint="  digite uma senha..."
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -111,6 +112,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="216dp"
         android:background="@drawable/label"
+        android:inputType="textPassword"
         android:hint="  confirme sua senha..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

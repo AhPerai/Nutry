@@ -59,6 +59,13 @@ public class AgendaFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ListaUsuario usuario = new ListaUsuario();
+        textoInicio.setText("Olá, "+ usuario.getUsuarioLogado().getNome()+ "!");
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment

@@ -17,23 +17,11 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:id="@+id/button_verListaRefeicao"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="340dp"
-        android:backgroundTint="@color/botoes_branco"
-        android:text="Ver histórico de refeições"
-        android:textColor="@color/texto_roxo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/button_refeicao"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="144dp"
         android:background="@drawable/botao_princ"
         android:text="Adicionar nova refeição"
         android:textAlignment="center"
@@ -41,14 +29,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_agua"
+        android:id="@+id/button_verListaRefeicao"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/botao_princ"
-        android:text="Adicionar água"
-
+        android:layout_marginTop="392dp"
+        android:backgroundTint="@color/botoes_branco"
+        android:text="Ver histórico de refeições"
+        android:textColor="@color/texto_roxo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,10 +45,22 @@
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="460dp"
         android:backgroundTint="@color/botoes_branco"
         android:text="Ver consumo de água"
         android:textColor="@color/texto_roxo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_agua"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="212dp"
+        android:background="@drawable/botao_princ"
+        android:text="Adicionar água"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -25,16 +25,10 @@
             android:exported="false" />
 
         <receiver
-            android:name=".Service.Notificacao"
-            android:exported="false" />
+            android:name=".Service.Notificacao" />
 
         <receiver
-            android:name=".Service.NotificacaoAgua">
-            <intent-filter>
-                <action android:name="EXECUTAR_ALARME"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </receiver>
+            android:name=".Service.NotificacaoAgua"/>
 
         <activity
             android:name=".View.fragments.SaibaMaisActivity"
