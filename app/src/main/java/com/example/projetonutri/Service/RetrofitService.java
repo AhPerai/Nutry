@@ -20,4 +20,6 @@ public class RetrofitService {
     public UsuarioService getUsuarioService() {
         return this.retrofit.create(UsuarioService.class);
     }
+
+    public CategoriaService getCategoriaService() { return this.retrofit.create(CategoriaService.class); }
 }

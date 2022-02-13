@@ -23,14 +23,16 @@ import com.example.projetonutri.Service.NotificacaoAgua;
  * Use the {@link ScoreFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScoreFragment extends Fragment {
+public class NotificacaoFragment extends Fragment {
+
     Switch lembreteRefeicao, lembreteAgua;
-    public ScoreFragment() {
+
+    public NotificacaoFragment() {
         // Required empty public constructor
     }
-
-    public static ScoreFragment newInstance(String param1, String param2) {
-        ScoreFragment fragment = new ScoreFragment();
+    
+    public static NotificacaoFragment newInstance(String param1, String param2) {
+        NotificacaoFragment fragment = new NotificacaoFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

@@ -15,11 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.R;
 import com.example.projetonutri.Service.RetrofitService;
 import com.example.projetonutri.Service.UsuarioService;
 import com.example.projetonutri.Utils.UsuarioLogado;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -76,10 +80,26 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                         if(response.isSuccessful()){
+                            Log.e("success",response.body().toString());
+                            usuarioLogado.setUsuarioLogado(response.body());
                             Toast.makeText(getContext(), "Logado", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), HomeActivicy.class);
                             startActivity(intent);
-                            usuarioLogado.setUsuarioLogado(response.body());
+
+                            Call<List<Refeicao>> callRefeicoes = usuarioService.getRefeicaofromUsuario(usuarioLogado.getUsuarioLogado().getId());
+
+                            callRefeicoes.enqueue(new Callback<List<Refeicao>>() {
+
+                                @Override
+                                public void onResponse(Call<List<Refeicao>> call, Response<List<Refeicao>> response) {
+                                    usuarioLogado.getUsuarioLogado().setListaRefeicao(response.body());
+                                }
+
+                                @Override
+                                public void onFailure(Call<List<Refeicao>> call, Throwable t) {
+                                    Log.e("UsuarioService   ", "Erro carregar lista:" + t.getMessage());
+                                }
+                            });
                         }else{
                             Toast.makeText(getContext(), "O email ou senha informados são inválidos", Toast.LENGTH_SHORT).show();
                         }

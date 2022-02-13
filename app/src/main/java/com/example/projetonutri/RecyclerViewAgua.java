@@ -7,10 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
-
-import com.example.projetonutri.Model.ListaUsuario;
 import com.example.projetonutri.View.fragments.AguaAdapter;
-import com.example.projetonutri.View.fragments.GreenAdapter;
 
 public class RecyclerViewAgua extends AppCompatActivity {
 
@@ -24,8 +21,13 @@ public class RecyclerViewAgua extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_agua);
         RecyclerView.LayoutManager LayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(LayoutManager);
+
+        //Essa variável recebe a lista de consumo de água diário do usuário
+
+        /*
         mAdapter = new AguaAdapter(ListaUsuario.usuarioLogado.getAguas());
         recyclerView.setAdapter(mAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
+         */
     }
 }

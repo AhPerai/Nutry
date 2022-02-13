@@ -24,12 +24,11 @@ import java.util.List;
  */
 public class AgendaFragment extends Fragment {
     public AgendaFragment() {
-        // Required empty public constructor
     }
-    private static final int NUM_LIST_ITENS = 5;
-    TextView textoInicio;
+
     Button btnAgua, btnRefeicao, btnVerHistoricoRefeicao, btnVerConsumo;
-    List<String> comidas = new ArrayList<>();
+    TextView textoInicio;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +45,22 @@ public class AgendaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
+
+        //Variáveis da tela
         btnAgua = view.findViewById(R.id.button_agua);
         btnRefeicao = view.findViewById(R.id.button_refeicao);
         btnVerHistoricoRefeicao = view.findViewById(R.id.button_verListaRefeicao);
         btnVerConsumo = view.findViewById(R.id.button_verListaAgua);
         textoInicio = view.findViewById(R.id.tv_titulo);
 
+
+        //Texto de boas vindas
+        //textoInicio.setText("Olá, "+ usuario.getUsuarioLogado().getNome()+ "!");
+
+
+        //Direciona o Usuário para a tela com a lista de consumo de água
         btnVerConsumo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +68,8 @@ public class AgendaFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        //Direciona o Usuário para a tela com a lista de refeições do dia
         btnVerHistoricoRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,26 +77,30 @@ public class AgendaFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        //Faz a chamada para o método de abrir a dialog de Criar Refeição
         btnRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showCustomDialogRefeicao();
             }
         });
+
+        //Faz a chamada para o método de abrir a dialog de Registrar consumo de água
         btnAgua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCustomDialog();
+                showCustomDialogAgua();
             }
         });
         return view;
     }
     public void showCustomDialog(){
         DialogAguaFragment dialogaguaFragment = new DialogAguaFragment();
-        dialogaguaFragment.show(getActivity().getSupportFragmentManager(),"dialog de agua");
+        dialogaguaFragment.show(getActivity().getSupportFragmentManager(), "dialog de agua");
     }
     public void showCustomDialogRefeicao(){
         DialogRefeicaoFragment dialogRefeicaoFragment = new DialogRefeicaoFragment();
-        dialogRefeicaoFragment.show(getActivity().getSupportFragmentManager(),"dialog de refeicao");
+        dialogRefeicaoFragment.show(getActivity().getSupportFragmentManager(), "dialog de refeicao");
     }
 }

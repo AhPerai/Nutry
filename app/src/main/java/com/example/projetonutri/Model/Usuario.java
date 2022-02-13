@@ -1,29 +1,30 @@
 package com.example.projetonutri.Model;
 
-import androidx.annotation.NonNull;
+import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 
 public class Usuario {
-
+    @SerializedName("id_usuario")
     private  int id;
     private String email;
     private String senha;
     private String nome;
     private int idade;
     private String genero;
-    private ArrayList<Refeicao> refeicoes = new ArrayList<>();
-    Refeicao refeicao = new Refeicao();
-    private ArrayList<Agua> aguas = new ArrayList<Agua>();
+    @SerializedName("refeicaos")
+    private List<Refeicao> listaRefeicao;
+    //    private ArrayList<Agua> listaAgua;
 
-    public Usuario(String nome, String email, String senha, int idade, String genero) {
+    public Usuario(String nome, String email, String senha,
+                   int idade, String genero, List<Refeicao> listaRefeicao) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.idade = idade;
         this.genero = genero;
+        this.listaRefeicao = listaRefeicao;
     }
 
     public int getId() {
@@ -32,14 +33,6 @@ public class Usuario {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getEmail() {
@@ -58,11 +51,19 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getIdade() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(String idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
@@ -74,39 +75,23 @@ public class Usuario {
         this.genero = genero;
     }
 
-    public ArrayList<Refeicao> getRefeicoes() {
-        return refeicoes;
+    public ArrayList<Refeicao> getListaRefeicao() {
+        return (ArrayList<Refeicao>) listaRefeicao;
     }
 
-    public void populaRefeicao(Date data){
-        Refeicao refeicaoAux = new Refeicao();
-        for(int i = 0; i < refeicao.getRefeicoes().size(); i++){
-            refeicaoAux.getRefeicoes().add(refeicao.getRefeicoes().get(i));
-        }
-        refeicaoAux.setDataeHora(data);
-        refeicoes.add(refeicaoAux);
-        refeicao = new Refeicao();
+    public void setListaRefeicao(List<Refeicao> listaRefeicao) {
+        this.listaRefeicao = listaRefeicao;
     }
 
-    public void setAlimentodaRefeicao(Alimento alimento) {
-        refeicao.setRefeicoes(alimento);
-    }
-
-    public Refeicao getAlimentodaRefeicao() {
-        return refeicao;
-    }
-
-    public void setAgua(Agua agua) {
-        aguas.add(agua);
-    }
-
-    public ArrayList<Agua> getAguas() {
-        return aguas;
-    }
-
-    @NonNull
     @Override
     public String toString() {
-        return super.toString() + id + "Nome:"+ nome + "Idade: "+ idade + "Genero: "+ genero + "Email:"+ email + "Senha: "+ senha;
+        return "Usuario{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", genero='" + genero + '\'' +
+                '}';
     }
 }

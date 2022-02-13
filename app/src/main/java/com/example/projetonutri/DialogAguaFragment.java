@@ -32,7 +32,6 @@ public class DialogAguaFragment extends AppCompatDialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-
         View view = inflater.inflate(R.layout.fragment_dialog_agua, null);
 
         builder.setView(view).setTitle("Adição de Consumo de água");
@@ -47,7 +46,6 @@ public class DialogAguaFragment extends AppCompatDialogFragment {
                 Toast.makeText(getContext(), "Registro de água salvo com sucesso!", Toast.LENGTH_SHORT).show();
             }
         });
-
 
         return builder.create();
     }
