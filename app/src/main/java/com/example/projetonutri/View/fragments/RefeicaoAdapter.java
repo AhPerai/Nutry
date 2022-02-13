@@ -11,12 +11,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projetonutri.Model.Alimento;
 import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.R;
+import com.example.projetonutri.Service.RefeicaoService;
+import com.example.projetonutri.Service.RetrofitService;
 import com.example.projetonutri.VitaminasActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RefeicaoAdapter extends RecyclerView.Adapter<RefeicaoAdapter.NumberViewHolder>{
 
@@ -53,11 +60,42 @@ public class RefeicaoAdapter extends RecyclerView.Adapter<RefeicaoAdapter.Number
         Refeicao refeicao = comidas.get(position);
 
         int posicao = position;
-        //TODO atribuir a refeição e  horário as variáveis da tela
 
-//        holder.refeicao.setText(refeicao.getAlimentos().toString());
-//        holder.hora.setText(refeicao.getDataeHora().toString());
 
+        holder.hora.setText(refeicao.getData().toString());
+
+
+        RefeicaoService refeicaoService = new RetrofitService().getRefeicaoService();
+        Call<Refeicao> callRefeicao = refeicaoService.getRefeicaoById(refeicao.getId());
+
+        callRefeicao.enqueue(new Callback<Refeicao>() {
+            @Override
+            public void onResponse(Call<Refeicao> call, Response<Refeicao> response) {
+                Refeicao refeicaoAPI = response.body();
+                Log.e("success",response.body().toString());
+
+                Call<List<Alimento>> callAlimentos = refeicaoService.getAlimentosFromRefeicao(refeicaoAPI.getId());
+                callAlimentos.enqueue(new Callback<List<Alimento>>() {
+
+                    @Override
+                    public void onResponse(Call<List<Alimento>> call, Response<List<Alimento>> response) {
+                        refeicaoAPI.setListaAlimento(response.body());
+                        holder.refeicao.setText(refeicaoAPI.getListaAlimento().toString());
+                        Log.e("success",response.body().toString());;
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Alimento>> call, Throwable t) {
+                        Log.e("RefeicaoService   ", "Erro ao carregar a lista de alimentos:" + t.getMessage());
+                    }
+                });
+            }
+            @Override
+            public void onFailure(Call<Refeicao> call, Throwable t) {
+                Log.e("RefeicaoService   ", "Não foi possível encontrar a Refeição:" + t.getMessage());
+            }
+        });
+        
         //Ativa o botão de avaliar a Refeição
         holder.verVitaminas.setOnClickListener(new View.OnClickListener() {
             @Override

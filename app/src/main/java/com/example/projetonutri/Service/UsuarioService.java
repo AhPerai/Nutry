@@ -1,6 +1,7 @@
 package com.example.projetonutri.Service;
 
 import com.example.projetonutri.Model.Refeicao;
+import com.example.projetonutri.Model.Refeicao_Alimento;
 import com.example.projetonutri.Model.Usuario;
 
 import java.util.ArrayList;
@@ -64,5 +65,8 @@ public interface UsuarioService {
 
     @GET("usuario/refeicao/hoje/{id}")
     Call<List<Refeicao>> getRefeicaofromUsuarioToday(@Path("id") int id);
+
+    @GET("usuario/refeicao/hoje/{id}")
+    Call<List<Refeicao>> getRefeicaoTodayFromUsuario(@Path("id") int id);
 
 }

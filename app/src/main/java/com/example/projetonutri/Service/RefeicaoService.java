@@ -21,7 +21,6 @@ public interface RefeicaoService {
     @FormUrlEncoded
     @POST("refeicao")
     Call<Refeicao> createRefeicao(
-            @Field("data") Date data,
             @Field("UsuarioIdUsuario") int id
     );
 
@@ -43,5 +42,4 @@ public interface RefeicaoService {
             @Field("RefeicaoIdRefeicao") int id_refeicao,
             @Field("AlimentoIdAlimento") int id_alimento
     );
-
 }

@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Refeicao {
     @SerializedName("id_refeicao")
@@ -12,9 +13,12 @@ public class Refeicao {
     private Date data;
     @SerializedName("UsuarioIdUsuario")
     private int usuarioID;
-    private ArrayList<Alimento> listaAlimento;
 
-    public Refeicao(int id, Date data, int usuarioID, ArrayList<Alimento> listaAlimento) {
+    private List<Alimento> listaAlimento;
+
+    public Refeicao(){}
+
+    public Refeicao(int id, Date data, int usuarioID, List<Alimento> listaAlimento) {
         this.id = id;
         this.data = data;
         this.usuarioID = usuarioID;
@@ -46,10 +50,19 @@ public class Refeicao {
     }
 
     public ArrayList<Alimento> getListaAlimento() {
-        return listaAlimento;
+        return  (ArrayList<Alimento>) listaAlimento;
     }
 
-    public void setListaAlimento(ArrayList<Alimento> listaAlimento) {
+    public void setListaAlimento(List<Alimento> listaAlimento) {
         this.listaAlimento = listaAlimento;
+    }
+
+    @Override
+    public String toString() {
+        return "Refeicao{" +
+                "id=" + id +
+                ", data=" + data +
+                ", usuarioID=" + usuarioID +
+                '}';
     }
 }

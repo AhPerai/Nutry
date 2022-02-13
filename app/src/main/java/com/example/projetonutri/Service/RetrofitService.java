@@ -22,4 +22,8 @@ public class RetrofitService {
     }
 
     public CategoriaService getCategoriaService() { return this.retrofit.create(CategoriaService.class); }
+
+    public RefeicaoService getRefeicaoService() { return this.retrofit.create(RefeicaoService.class); }
+
+    public AlimentoService getAlimentoService() { return this.retrofit.create(AlimentoService.class); }
 }

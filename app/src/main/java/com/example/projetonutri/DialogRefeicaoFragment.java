@@ -22,12 +22,22 @@ import android.widget.Toast;
 import com.example.projetonutri.Model.Alimento;
 import com.example.projetonutri.Model.Categoria;
 import com.example.projetonutri.Model.Refeicao;
+import com.example.projetonutri.Model.Refeicao_Alimento;
+import com.example.projetonutri.Model.Usuario;
 import com.example.projetonutri.Service.CategoriaService;
+import com.example.projetonutri.Service.RefeicaoService;
 import com.example.projetonutri.Service.RetrofitService;
 import com.example.projetonutri.Service.UsuarioService;
 import com.example.projetonutri.Utils.UsuarioLogado;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -48,6 +58,7 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
      ArrayList<Categoria> listaCategorias = new ArrayList<>();
      ArrayList<Alimento> listaAlimento = new ArrayList<>();
     ArrayList<Alimento> refeicaoAlimentos = new ArrayList<>();
+    Refeicao refeicao = new Refeicao();
 
     @NonNull
     @Override
@@ -131,7 +142,6 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
             }
         });
 
-//        ListaUsuario usuarioLogado = new ListaUsuario();
         adicionarMaisRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,18 +151,86 @@ public class DialogRefeicaoFragment extends AppCompatDialogFragment {
 
             }
         });
+
         salvarRefeicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Aqui a refeição é efetivamente adicionada no array de refeições do usuário, então esse botão salva a refeição.
                 //Pega a refeicao criada, seta o time, adiciona-a para a lista de refeicoes do usuario
-                /*
-                Date currentTime = Calendar.getInstance().getTime();
-                usuarioLogado.getUsuarioLogado().getAlimentodaRefeicao().setDataeHora(currentTime);
-                usuarioLogado.getUsuarioLogado().populaRefeicao();
-                listaAlimentos.setText(usuarioLogado.getUsuarioLogado().getRefeicoes().toString());
+
+                int usuarioId = usuarioLogado.getUsuarioLogado().getId();
+                //Chamada à API
+                RefeicaoService refeicaoService = new RetrofitService().getRefeicaoService();
+                Call<Refeicao> call = refeicaoService.createRefeicao(usuarioId);
+
+                call.enqueue(new Callback<Refeicao>() {
+
+                    @Override
+                    public void onResponse(Call<Refeicao> call, Response<Refeicao> response) {
+                        refeicao = response.body();
+                        Log.e("success",response.body().toString());
+
+                        int refeicaoId = refeicao.getId();
+
+                        //Criando a relação entre refeição e alimento
+                        for(int i = 0; i< refeicaoAlimentos.size() ;i++){
+
+                            Call<Refeicao_Alimento> callRelacao = refeicaoService.relacionarRefeicaoAlimento(
+                                    refeicaoId, refeicaoAlimentos.get(i).getId_alimento());
+
+                            callRelacao.enqueue(new Callback<Refeicao_Alimento>() {
+
+                                @Override
+                                public void onResponse(Call<Refeicao_Alimento> call, Response<Refeicao_Alimento> response) {
+                                }
+
+                                @Override
+                                public void onFailure(Call<Refeicao_Alimento> call, Throwable t) {
+                                    Log.e("RefeicaoService   ", "Erro desenvolver a relação:" + t.getMessage());
+                                }
+                            });
+                        }
+                        //Obtendo os Alimentos da Refeicao
+                        Call<Refeicao> callRefeicao = refeicaoService.getRefeicaoById(refeicaoId);
+
+                        callRefeicao.enqueue(new Callback<Refeicao>() {
+                            @Override
+                            public void onResponse(Call<Refeicao> call, Response<Refeicao> response) {
+                                refeicao = response.body();
+                                Log.e("success",response.body().toString());
+
+                                Call<List<Alimento>> callAlimentos = refeicaoService.getAlimentosFromRefeicao(refeicao.getId());
+                                callAlimentos.enqueue(new Callback<List<Alimento>>() {
+
+                                    @Override
+                                    public void onResponse(Call<List<Alimento>> call, Response<List<Alimento>> response) {
+                                        refeicao.setListaAlimento(response.body());
+                                        usuarioLogado.getUsuarioLogado().getListaRefeicao().add(refeicao);
+                                        Log.e("success",refeicaoAlimentos.toString());
+                                        Log.e("success",response.body().toString());;
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<List<Alimento>> call, Throwable t) {
+                                        Log.e("RefeicaoService   ", "Erro ao carregar a lista de alimentos:" + t.getMessage());
+                                    }
+                                });
+                            }
+                            @Override
+                            public void onFailure(Call<Refeicao> call, Throwable t) {
+                                Log.e("RefeicaoService   ", "Não foi possível encontrar a Refeição:" + t.getMessage());
+                            }
+                        });
+                    }
+                    @Override
+                    public void onFailure(Call<Refeicao> call, Throwable t) {
+                        Log.e("RefeicaoService   ", "Erro ao gerar refeição:" + t.getMessage());
+                    }
+                });
+                //Fim da chamada
+
+                //Limpa o textView
+                listaAlimentos.setText("");
                 Toast.makeText(getContext(), "Refeição salva com sucesso!", Toast.LENGTH_LONG).show();
-                */
             }
         });
 
