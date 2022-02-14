@@ -39,7 +39,7 @@ public interface UsuarioService {
     @FormUrlEncoded
     @PUT("usuario/{id}")
     Call<Usuario>
-    updateUsuario(@Path("id") String id,
+    updateUsuario(@Path("id") int id,
                   @Field("email") String email,
                   @Field("senha") String senha,
                   @Field("nome") String nome,

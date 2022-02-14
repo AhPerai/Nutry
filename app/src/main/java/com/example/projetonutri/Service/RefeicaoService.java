@@ -36,10 +36,14 @@ public interface RefeicaoService {
     @GET("refeicao/alimento/{id}")
     Call<List<Alimento>> getAlimentosFromRefeicao(@Path("id") int id);
 
+    @GET("refeicao/novitamina/{id}")
+    Call<List<Vitamina>> getVitaminasFaltante(@Path("id") int id);
+
     @FormUrlEncoded
     @POST("refeicao/alimento/relacao")
     Call<Refeicao_Alimento> relacionarRefeicaoAlimento(
             @Field("RefeicaoIdRefeicao") int id_refeicao,
             @Field("AlimentoIdAlimento") int id_alimento
     );
+
 }

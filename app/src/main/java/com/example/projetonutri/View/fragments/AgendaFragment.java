@@ -16,6 +16,8 @@ import com.example.projetonutri.DialogRefeicaoFragment;
 import com.example.projetonutri.R;
 import com.example.projetonutri.RecyclerViewActivity;
 import com.example.projetonutri.RecyclerViewAgua;
+import com.example.projetonutri.Utils.UsuarioLogado;
+
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -37,9 +39,9 @@ public class AgendaFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-/*
-        textoInicio.setText("Olá, "+ usuario.getUsuarioLogado().getNome()+ "!");
-*/
+        UsuarioLogado usuarioLogado = UsuarioLogado.getInstance();
+//        Texto de boas vindas
+        textoInicio.setText("Olá, "+ usuarioLogado.getUsuarioLogado().getNome()+ "!");
     }
 
     @Override
@@ -55,9 +57,9 @@ public class AgendaFragment extends Fragment {
         btnVerConsumo = view.findViewById(R.id.button_verListaAgua);
         textoInicio = view.findViewById(R.id.tv_titulo);
 
-
-        //Texto de boas vindas
-        //textoInicio.setText("Olá, "+ usuario.getUsuarioLogado().getNome()+ "!");
+        UsuarioLogado usuarioLogado = UsuarioLogado.getInstance();
+//        Texto de boas vindas
+        textoInicio.setText("Olá, "+ usuarioLogado.getUsuarioLogado().getNome()+ "!");
 
 
         //Direciona o Usuário para a tela com a lista de consumo de água
@@ -90,7 +92,7 @@ public class AgendaFragment extends Fragment {
         btnAgua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCustomDialogAgua();
+                showCustomDialog();
             }
         });
         return view;

@@ -25,4 +25,9 @@ public class Vitamina {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return "Vitamina " + nome + "; ";
+    }
 }

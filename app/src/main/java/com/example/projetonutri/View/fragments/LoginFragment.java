@@ -100,6 +100,7 @@ public class LoginFragment extends Fragment {
                                     Log.e("UsuarioService   ", "Erro carregar lista:" + t.getMessage());
                                 }
                             });
+
                         }else{
                             Toast.makeText(getContext(), "O email ou senha informados são inválidos", Toast.LENGTH_SHORT).show();
                         }

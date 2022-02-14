@@ -59,11 +59,9 @@ public class RefeicaoAdapter extends RecyclerView.Adapter<RefeicaoAdapter.Number
         //Recupera a posição da Refeição clicada para recuperar a Refeição
         Refeicao refeicao = comidas.get(position);
 
-        int posicao = position;
-
+        int posicao = refeicao.getId();
 
         holder.hora.setText(refeicao.getData().toString());
-
 
         RefeicaoService refeicaoService = new RetrofitService().getRefeicaoService();
         Call<Refeicao> callRefeicao = refeicaoService.getRefeicaoById(refeicao.getId());
