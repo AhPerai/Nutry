@@ -48,8 +48,8 @@ public class AguaAdapter extends RecyclerView.Adapter<AguaAdapter.NumberViewHold
         Log.d(TAG, "#"+position);
         Agua agua = aguas.get(position);
 
-        holder.tvAgua.setText(String.valueOf(agua.getQuantidadeDeCopos()));
-        holder.hora.setText(agua.getDataEHora().toString());
+        holder.tvAgua.setText(String.valueOf(agua.getQuantidade()));
+        holder.hora.setText(agua.getData().toString());
     }
 
     //Tamanho da lista

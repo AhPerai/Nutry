@@ -61,7 +61,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Refeicao>> call, Throwable t) {
-
+                Log.e("UsuarioService   ", "Erro buscar o consumo de refeições:" + t.getMessage());
             }
         });
 

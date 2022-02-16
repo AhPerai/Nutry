@@ -15,7 +15,7 @@ public class Usuario {
     private String genero;
     @SerializedName("refeicaos")
     private List<Refeicao> listaRefeicao;
-    //    private ArrayList<Agua> listaAgua;
+    private ArrayList<Agua> listaAgua;
 
     public Usuario(String nome, String email, String senha,
                    int idade, String genero, List<Refeicao> listaRefeicao) {
@@ -81,6 +81,14 @@ public class Usuario {
 
     public void setListaRefeicao(List<Refeicao> listaRefeicao) {
         this.listaRefeicao = listaRefeicao;
+    }
+
+    public ArrayList<Agua> getListaAgua() {
+        return listaAgua;
+    }
+
+    public void setListaAgua(ArrayList<Agua> listaAgua) {
+        this.listaAgua = listaAgua;
     }
 
     @Override

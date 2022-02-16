@@ -1,38 +1,56 @@
 package com.example.projetonutri.Model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 public class Agua {
 
-    private int quantidadeDeCopos;
-    private Date dataEHora;
+    @SerializedName("id_agua")
+    private  int id;
+    @SerializedName("data")
+    private Date data;
+    @SerializedName("UsuarioIdUsuario")
+    private int usuarioID;
+    @SerializedName("quantidade")
+    private int quantidade;
 
-    public Agua(int quantidadeDeCopos, Date dataEHora) {
-        this.quantidadeDeCopos = quantidadeDeCopos;
-        this.dataEHora = dataEHora;
+    public Agua(int id, Date data, int usuarioID, int quantidade) {
+        this.id = id;
+        this.data = data;
+        this.usuarioID = usuarioID;
+        this.quantidade = quantidade;
     }
 
-    public int getQuantidadeDeCopos() {
-        return quantidadeDeCopos;
+    public int getId() {
+        return id;
     }
 
-    public void setQuantidadeDeCopos(int quantidadeDeCopos) {
-        this.quantidadeDeCopos = quantidadeDeCopos;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getDataEHora() {
-        return dataEHora;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataEHora(Date dataEHora) {
-        this.dataEHora = dataEHora;
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "Agua{" +
-                "quantidadeDeCopos=" + quantidadeDeCopos +
-                ", dataEHora=" + dataEHora +
-                '}';
+    public int getUsuarioID() {
+        return usuarioID;
+    }
+
+    public void setUsuarioID(int usuarioID) {
+        this.usuarioID = usuarioID;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 }

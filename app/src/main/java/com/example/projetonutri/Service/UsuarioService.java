@@ -1,5 +1,6 @@
 package com.example.projetonutri.Service;
 
+import com.example.projetonutri.Model.Agua;
 import com.example.projetonutri.Model.Refeicao;
 import com.example.projetonutri.Model.Refeicao_Alimento;
 import com.example.projetonutri.Model.Usuario;
@@ -64,9 +65,9 @@ public interface UsuarioService {
     Call<List<Refeicao>> getRefeicaofromUsuario(@Path("id") int id);
 
     @GET("usuario/refeicao/hoje/{id}")
-    Call<List<Refeicao>> getRefeicaofromUsuarioToday(@Path("id") int id);
-
-    @GET("usuario/refeicao/hoje/{id}")
     Call<List<Refeicao>> getRefeicaoTodayFromUsuario(@Path("id") int id);
+
+    @GET("usuario/agua/hoje/{id}")
+    Call<List<Agua>> getAguaTodayFromUsuario(@Path("id") int id);
 
 }
